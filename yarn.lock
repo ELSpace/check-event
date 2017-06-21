@@ -834,6 +834,12 @@ block-stream@*:
   dependencies:
     inherits "~2.0.0"
 
+block-ui@^2.70.1:
+  version "2.70.1"
+  resolved "https://registry.yarnpkg.com/block-ui/-/block-ui-2.70.1.tgz#c862d64ee6288fb78123377c6680bc7ab262103f"
+  dependencies:
+    jquery ">=1.7.x"
+
 bluebird@^3.4.7:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.0.tgz#791420d7f551eea2897453a8a77653f96606d67c"
@@ -877,6 +883,21 @@ boom@2.x.x:
   resolved "https://registry.yarnpkg.com/boom/-/boom-2.10.1.tgz#39c8918ceff5799f83f9492a848f625add0c766f"
   dependencies:
     hoek "2.x.x"
+
+bootstrap-daterangepicker@^2.1.25:
+  version "2.1.25"
+  resolved "https://registry.yarnpkg.com/bootstrap-daterangepicker/-/bootstrap-daterangepicker-2.1.25.tgz#fcd8ba0b755a054d330d7a3b7c4dd8bb855cffb7"
+  dependencies:
+    jquery ">=1.10"
+    moment "^2.9.0"
+
+bootstrap-switch@^3.3.4:
+  version "3.3.4"
+  resolved "https://registry.yarnpkg.com/bootstrap-switch/-/bootstrap-switch-3.3.4.tgz#70e0aeb2a877c0dc766991de108e2170fc29a2ff"
+
+bootstrap@^3.3.7:
+  version "3.3.7"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-3.3.7.tgz#5a389394549f23330875a3b150656574f8a9eb71"
 
 brace-expansion@^1.1.7:
   version "1.1.8"
@@ -2276,6 +2297,13 @@ fstream@^1.0.0, fstream@^1.0.10, fstream@^1.0.2:
     mkdirp ">=0.5 0"
     rimraf "2"
 
+fullcalendar@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/fullcalendar/-/fullcalendar-3.4.0.tgz#34dabff2abe5e85f70025c789a5b9dc3ea4c4762"
+  dependencies:
+    jquery "2 - 3"
+    moment "^2.9.0"
+
 function-bind@^1.0.2:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.0.tgz#16176714c801798e4e8f2cf7f7529467bb4a5771"
@@ -2808,9 +2836,23 @@ jade@0.26.3:
     commander "0.6.1"
     mkdirp "0.3.0"
 
+jquery-slimscroll@^1.3.8:
+  version "1.3.8"
+  resolved "https://registry.yarnpkg.com/jquery-slimscroll/-/jquery-slimscroll-1.3.8.tgz#8481c44e7a47687653908a28f7f70aed64c84e36"
+  dependencies:
+    jquery ">= 1.7"
+
+"jquery@2 - 3", "jquery@>= 1.7", jquery@>=1.10, jquery@>=1.7.x:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
+
 js-base64@^2.1.9:
   version "2.1.9"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.1.9.tgz#f0e80ae039a4bd654b5f281fc93f04a914a7fcce"
+
+js-cookie@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/js-cookie/-/js-cookie-2.1.4.tgz#da4ec503866f149d164cf25f579ef31015025d8d"
 
 js-tokens@^3.0.0:
   version "3.0.1"
@@ -3167,6 +3209,10 @@ mocha@^2.4.5:
     mkdirp "0.5.1"
     supports-color "1.2.0"
     to-iso-string "0.0.2"
+
+moment@^2.9.0:
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.18.1.tgz#c36193dd3ce1c2eed2adb7c802dbbc77a81b1c0f"
 
 ms@0.7.1, ms@^0.7.1:
   version "0.7.1"
@@ -4330,6 +4376,10 @@ sigmund@~1.0.0:
 signal-exit@^3.0.0:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
+
+simple-line-icons@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/simple-line-icons/-/simple-line-icons-2.4.1.tgz#b75bc5a0d87e530928c2ccda5735274bb256f234"
 
 slash@^1.0.0:
   version "1.0.0"
