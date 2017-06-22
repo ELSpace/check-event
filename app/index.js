@@ -5,9 +5,11 @@ import { render } from 'react-dom';
 import './assets';
 
 import Dashboard from './dashboard/Dashboard';
+import Register from './user/register/Register';
 
 render(
-  <Dashboard />, 
+  //<Dashboard />,   
+  <Register />,
   document.getElementById('app')
 );
 
