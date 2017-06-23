@@ -10,9 +10,9 @@ import Login from './user/login/Login';
 
 
 render(
-  //<Dashboard />,   
+  <Dashboard />,   
   //<Register />,
-  <Login />,
+  //<Login />,
   document.getElementById('app')
 );
 

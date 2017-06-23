@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import MenuItem from './MenuItem';
 import classNames from 'classnames';
 
-const createSubMenu = menu =>
-  menu.map(item => 
+const createSubMenu = sub =>
+  sub.map(item => 
     <li className="nav-item">
       <MenuItem title={item.title} icon={item.icon}/>
     </li>
@@ -32,6 +32,10 @@ SidebarItem.propTypes = {
   open: PropTypes.bool,
   active: PropTypes.bool,
   sub: PropTypes.array,
+};
+
+SidebarItem.defaultProps = {
+  sub: [],
 };
 
 

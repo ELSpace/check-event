@@ -42,19 +42,13 @@ const menu = [
     open: true,
     active: true,
     icon: "icon-home",
-    title: "Dashboard",
-    sub: [
-      {
-        id: 1,
-        title: 'Dashboard 1',
-        icon: "icon-graph",
-      },
-      {
-        id: 2,
-        title: 'Dashboard 2',
-        icon: "icon-bulb",
-      }
-    ]
+    title: "Dashboard"
+  },
+
+  {
+    id: 2,
+    icon: "icon-doc",
+    title: "Forms"
   },
 ]
 
