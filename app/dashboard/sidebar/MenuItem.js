@@ -6,7 +6,7 @@ const MenuItem = ({icon, title}) => (
     <i className={icon} />
     <span className="title">{title}</span>
     <span className="selected"></span>
-    {/* && <span className="arrow" /> */}
+    <span className="arrow" />
   </a>
 );
 

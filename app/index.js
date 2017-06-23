@@ -8,8 +8,8 @@ import Dashboard from './dashboard/Dashboard';
 import Register from './user/register/Register';
 
 render(
-  //<Dashboard />,   
-  <Register />,
+  <Dashboard />,   
+  // <Register />,
   document.getElementById('app')
 );
 
@@ -17,7 +17,4 @@ render(
 if(module.hot) {
   // accept itself 
   module.hot.accept();
-  window.addEventListener('message', e => {
-    console.clear();
-  });
 }

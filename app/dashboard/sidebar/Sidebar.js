@@ -8,7 +8,8 @@ const createMenuItems = menu =>
       icon={item.icon} 
       title={item.title} 
       sub={item.sub}
-      
+      open={item.open}
+      active={item.active}
     />
   );
 

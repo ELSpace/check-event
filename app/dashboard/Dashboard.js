@@ -39,6 +39,8 @@ const profileItems = [
 const menu = [
   {
     id: 1,
+    open: true,
+    active: true,
     icon: "icon-home",
     title: "Dashboard",
     sub: [
@@ -71,8 +73,8 @@ const Dashboard = () => (
             
           </Header.DropdownMenu>
           <Header.Profile name="afif" pic={pic} items={profileItems}/>
-      
-        </Header.TopMenuWrapper>
+       
+        </Header.TopMenuWrapper> 
       </Header.PageWrapper>    
     </Header>
     <div className="page-container"> 
