@@ -6,10 +6,13 @@ import './assets';
 
 import Dashboard from './dashboard/Dashboard';
 import Register from './user/register/Register';
+import Login from './user/login/Login';
+
 
 render(
-  <Dashboard />,   
-  // <Register />,
+  //<Dashboard />,   
+  //<Register />,
+  <Login />,
   document.getElementById('app')
 );
 
