@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../styles/login.min.css';
+
 class Register extends React.Component {
   componentWillMount(){
     window.$('body').attr('class', 'login' );
