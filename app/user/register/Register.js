@@ -1,6 +1,7 @@
 import React from 'react';
 
 import '../styles/login.min.css';
+import logo from '../../img/elspacelogo.png'
 
 class Register extends React.Component {
   componentWillMount(){
@@ -11,7 +12,7 @@ class Register extends React.Component {
         {/* BEGIN LOGO */}
         <div className="logo">
           <a href="index.html">
-            <img src="../assets/pages/img/logo-big.png" alt /> </a>
+            <img src={logo} alt /> </a>
         </div>
         {/* END LOGO */}
         {/* BEGIN LOGIN */}
