@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import MenuItem from './MenuItem';
+import classNames from 'classnames';
 
 const createSubMenu = menu =>
   menu.map(item => 
@@ -10,9 +11,13 @@ const createSubMenu = menu =>
   );
 
 const SidebarItem = ({title, icon, open, active, sub}) => {
-  const className = "nav-item";   
+  const className = classNames({
+    'nav-link': true,
+    'open': open,
+    'active': active
+  });
   
-  return <li className={active && open ? className + " active open" : className}>
+  return <li className={className}>
     <MenuItem title={title} icon={icon}/>
 
     <ul className="sub-menu">
