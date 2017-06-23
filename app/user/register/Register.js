@@ -9,42 +9,14 @@ class Register extends React.Component {
   }
   render() { return <div>  
 
-        {/* BEGIN LOGO */}
-        <div className="logo">
-          <a href="index.html">
-            <img src={logo} alt /> </a>
-        </div>
-        {/* END LOGO */}
-        {/* BEGIN LOGIN */}
+       
         <div className="content">
-          {/* BEGIN LOGIN FORM */}
-          <form className="login-form" action="index.html" method="post" noValidate="novalidate" style={{display: 'none'}}>
-            <div className="alert alert-danger display-hide">
-              <button className="close" data-close="alert" />
-              <span> Enter any username and password. </span>
-            </div>
-            <div className="create-account">
-              <p>
-                <a href="javascript:;" id="register-btn" className="uppercase">Create an account</a>
-              </p>
-            </div>
-          </form>
-          {/* END LOGIN FORM */}
-          {/* BEGIN FORGOT PASSWORD FORM */}
-          <form className="forget-form" action="index.html" method="post" noValidate="novalidate">
-            <h3 className="font-green">Forget Password ?</h3>
-            <p> Enter your e-mail address below to reset your password. </p>
-            <div className="form-group">
-              <input className="form-control placeholder-no-fix" type="text" autoComplete="off" placeholder="Email" name="email" /> </div>
-            <div className="form-actions">
-              <button type="button" id="back-btn" className="btn green btn-outline">Back</button>
-              <button type="submit" className="btn btn-success uppercase pull-right">Submit</button>
-            </div>
-          </form>
-          {/* END FORGOT PASSWORD FORM */}
+          <div>
+            <img src={logo} className="center-block img-responsive" width="100" alt />
+          </div>
           {/* BEGIN REGISTRATION FORM */}
           <form className="register-form" action="index.html" method="post" noValidate="novalidate" style={{display: 'block'}}>
-            <h3 className="font-green">Sign Up</h3>
+            <h3 className="font-green">REGISTER</h3>
             <p className="hint"> Enter your personal details below: </p>
             <div className="form-group">
               <label className="control-label visible-ie8 visible-ie9">Full Name</label>

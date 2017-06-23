@@ -9,17 +9,12 @@ class Login extends React.Component {
     window.$('body').attr('class', 'login' );
   }
   render() { return <div>
-        {/* BEGIN LOGO */}
-        <div className="logo">
-          <a href="index.html">
-            <img src={logo} width="150" alt /> </a>
-        </div>
-        {/* END LOGO */}
-        {/* BEGIN LOGIN */}
         <div className="content">
-          {/* BEGIN LOGIN FORM */}
+          <div>
+            <img src={logo} className="center-block img-responsive" width="100" alt />
+          </div>
           <form className="login-form" action="index.html" method="post" noValidate="novalidate">
-            <h3 className="form-title font-green">Sign In</h3>
+            <h3 className="form-title font-green">LOGIN</h3>
             <div className="alert alert-danger display-hide">
               <button className="close" data-close="alert" />
               <span> Enter any username and password. </span>
