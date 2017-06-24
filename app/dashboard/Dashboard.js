@@ -1,4 +1,6 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+
 import Header from './header/Header';
 import Sidebar from './sidebar/Sidebar'; 
 import Content from './content/Content'; 
@@ -75,7 +77,10 @@ const Dashboard = () => (
       <Sidebar menu={menu}/>
       <Content >
         <Content.Item title="Trololo" description="huh">
-          HHHHHHHHHHHHHHHHHHHHH
+          <Switch>
+            <Route exact path='/' component={() => <h1>lalal</h1>} />
+            <Route path='/forms' component={() => <h1>Hallo a</h1>} />
+          </Switch>
         </Content.Item>
         </Content>
     </div>
