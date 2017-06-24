@@ -1,10 +1,9 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-
 import Header from './header/Header';
 import Sidebar from './sidebar/Sidebar'; 
 import Content from './content/Content'; 
-
+import Forms from '../forms/Forms';
 import logo from '../theme/img/logo-default.png';
 import pic from '../theme/img/avatar11.jpg';
 
@@ -79,7 +78,7 @@ const Dashboard = () => (
         <Content.Item title="Trololo" description="huh">
    
             <Route exact path='/' component={() => <h1>lalal</h1>} />
-            <Route path='/forms' component={() => <h1>forms</h1>} />
+            <Route path='/forms' component={Forms}/>
             <Route path='/z' component={() => <h1>z a</h1>} />
 
         </Content.Item>
