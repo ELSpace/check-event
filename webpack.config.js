@@ -17,7 +17,8 @@ module.exports = {
     hot: true,
     contentBase: path.resolve(__dirname, 'dist'),
     publicPath: '/',
-    overlay: true
+    overlay: true,
+    historyApiFallback: true
   },
 
   output: {
