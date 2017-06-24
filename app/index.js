@@ -6,24 +6,34 @@ import {
   Link, 
   Switch
 } from 'react-router-dom';
+import { Provider } from 'mobx-react';
+
+// global store
+import Store from './store';
 
 // load project assets
 import './assets';
 
-import Dashboard from './dashboard/Dashboard';
-import Register from './user/register/Register';
-import Login from './user/login/Login';
+import Dashboard from './components/dashboard/Dashboard';
+import Register from './components/user/register/Register';
+import Login from './components/user/login/Login';
 
+
+const store = new Store();
+store.user.login()
 
 render(
-  <Router>
-    <Switch>
-      <Route path='/login' component={Login}/>
-      <Route path='/register' component={Register}/>
-      <Route path='/' component={Dashboard}/>
-    </Switch>
-  </Router>
-  ,document.getElementById('app')
+  <Provider store={store}>
+    <Router>
+      <Switch>
+        <Route path='/login' component={Login}/>
+        <Route path='/register' component={Register}/>
+        <Route path='/' component={Dashboard}/>
+      </Switch>
+    </Router>
+  </Provider>,
+   
+  document.getElementById('app')
 );
 
 // check if HMR is enabled

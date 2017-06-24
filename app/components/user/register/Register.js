@@ -1,7 +1,7 @@
 import React from 'react';
 
-import '../styles/login.min.css';
-import logo from '../../img/elspacelogo.png'
+import '../style.css';
+import logo from '../../../assets/img/elspacelogo.png'
 
 class Register extends React.Component {
   componentWillMount(){

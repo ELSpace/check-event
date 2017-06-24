@@ -1,12 +1,14 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import { Header, Sidebar, Content } from '../../metronic';
 
-import Header from './header/Header';
-import Sidebar from './sidebar/Sidebar'; 
-import Content from './content/Content'; 
+// components
+import Main from '../main/Main';
 import Forms from '../forms/Forms';
-import logo from '../theme/img/logo-default.png';
-import pic from '../theme/img/avatar11.jpg';
+
+// assets
+import logo from '../../assets/img/logo.png';
+import pic from '../../assets/img/avatar11.jpg';
 
 const actions = [
   {
@@ -68,23 +70,19 @@ const Dashboard = () => (
             badge="4"
             title="You have 4 notification"
           >
-            
+          {/* TODO create drop down menu items */}
           </Header.DropdownMenu>
-          <Header.Profile name="afif" pic={pic} items={profileItems}/>
-       
+          <Header.Profile name="fullname" pic={pic} items={profileItems}/>       
         </Header.TopMenuWrapper> 
       </Header.PageWrapper>    
     </Header>
     
     <div className="page-container">
-    
       <Sidebar menu={menu}/>
-      <Content >
-        <Content.Item title="Trololo" description="huh">
-          <Route path='/forms' component={Forms}/>
-        </Content.Item>
+      <Content>
+        <Route exact path='/' component={Main} />
+        <Route path='/forms' component={Forms}/>
       </Content>
-        
     </div>
     
   </div>  
