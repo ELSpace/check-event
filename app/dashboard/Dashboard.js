@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import Loadable from 'react-loading-overlay';
 
 import Header from './header/Header';
 import Sidebar from './sidebar/Sidebar'; 
@@ -73,18 +74,30 @@ const Dashboard = () => (
         </Header.TopMenuWrapper> 
       </Header.PageWrapper>    
     </Header>
-    <div className="page-container"> 
+    
+    <div className="page-container">
+    
       <Sidebar menu={menu}/>
       <Content >
+      <Loadable
+          active={true}
+          animate
+          zIndex={9}
+          spinner
+          text='Loading your content...'
+          >
         <Content.Item title="Trololo" description="huh">
-   
+        
             <Route exact path='/' component={() => <h1>lalal</h1>} />
             <Route path='/forms' component={() => <h1>forms</h1>} />
             <Route path='/z' component={() => <h1>z a</h1>} />
-
+          
         </Content.Item>
+       </Loadable>
         </Content>
+        
     </div>
+    
   </div>  
  
 );
