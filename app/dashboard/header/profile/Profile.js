@@ -5,6 +5,7 @@ import ProfileItem from './ProfileItem';
 const createProfileItems = items => 
 	items.map(item => 
 		<ProfileItem
+			key={item.id}
 			icon={item.icon}
 			title={item.title}
 			badge={item.badge}

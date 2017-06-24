@@ -7,7 +7,7 @@ const Actions = ({actions}) => {
   const createActionsList = actions => 
     actions.map(action => 
       <ActionsItem 
-        id={action.id}
+        key={action.id}
         title={action.title} 
         icon={action.icon}
         url={action.url}

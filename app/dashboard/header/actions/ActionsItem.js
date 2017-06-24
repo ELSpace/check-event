@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ActionsItem = ({id, title, icon, url}) => (
-    <li key={id}>
+const ActionsItem = ({title, icon, url}) => (
+    <li>
       <a href={url}>
         <i className={icon} /> {title}
       </a>
