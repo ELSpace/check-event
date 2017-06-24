@@ -79,22 +79,18 @@ const Dashboard = () => (
     
       <Sidebar menu={menu}/>
       <Content >
-      <Loadable
-          active={true}
-          animate
-          zIndex={9}
-          spinner
-          text='Loading your content...'
-          >
-        <Content.Item title="Trololo" description="huh">
-        
-            <Route exact path='/' component={() => <h1>lalal</h1>} />
+        <Loadable
+            active={true}
+            animate
+            zIndex={9}
+            spinner
+            text='Loading your content...'
+            >
+          <Content.Item title="Trololo" description="huh">
             <Route path='/forms' component={Forms}/>
-            <Route path='/z' component={() => <h1>z a</h1>} />
-          
-        </Content.Item>
-       </Loadable>
-        </Content>
+          </Content.Item>
+        </Loadable>
+      </Content>
         
     </div>
     
