@@ -6,11 +6,15 @@ import classNames from 'classnames';
 const createSubMenu = sub =>
   sub.map(item => 
     <li className="nav-item">
-      <MenuItem title={item.title} icon={item.icon}/>
+      <MenuItem 
+        title={item.title} 
+        icon={item.icon}
+        url={item.url}
+      />
     </li>
   );
 
-const SidebarItem = ({title, icon, open, active, sub}) => {
+const SidebarItem = ({title, icon, url, open, active, sub}) => {
   const className = classNames({
     'nav-link': true,
     'open': open,
@@ -18,7 +22,7 @@ const SidebarItem = ({title, icon, open, active, sub}) => {
   });
   
   return <li className={className}>
-    <MenuItem title={title} icon={icon}/>
+    <MenuItem title={title} icon={icon} url={url}/>
 
     <ul className="sub-menu">
       {createSubMenu(sub)}

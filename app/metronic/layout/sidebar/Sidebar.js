@@ -6,8 +6,9 @@ const createMenuItems = menu =>
   menu.map(item => 
     <SidebarItem 
       key={item.id}
-      icon={item.icon} 
-      title={item.title} 
+      icon={item.icon}
+      title={item.title}
+      url={item.url}
       sub={item.sub}
       open={item.open}
       active={item.active}

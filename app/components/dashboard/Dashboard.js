@@ -47,14 +47,16 @@ const menu = [
     id: 1,
     open: true,
     active: true,
-    icon: "icon-home",
-    title: "Dashboard"
+    icon: 'icon-home',
+    title: 'Dashboard',
+    url: '/'
   },
 
   {
     id: 2,
-    icon: "icon-doc",
-    title: "Forms"
+    icon: 'icon-doc',
+    title: 'Forms',
+    url: '/forms'
   },
 ]
 
