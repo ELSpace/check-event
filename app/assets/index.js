@@ -1,6 +1,6 @@
 // CSS
 import 'bootstrap/dist/css/bootstrap.css';
-//import 'simple-line-icons/css/simple-line-icons.css';
+import 'simple-line-icons/css/simple-line-icons.css';
 import 'bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css';
 import 'fullcalendar/dist/fullcalendar.css'; 
  
