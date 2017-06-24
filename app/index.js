@@ -1,6 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
-import {BrowserRouter as Router,Route,Link,Switch} from 'react-router-dom';
+import {
+  BrowserRouter as Router, 
+  Route, 
+  Link, 
+  Switch
+} from 'react-router-dom';
 
 // load project assets
 import './assets';
@@ -12,12 +17,12 @@ import Login from './user/login/Login';
 
 render(
   <Router>
-   <Switch>
-        <Route exact path='/' component={Dashboard}/>
-         <Route path='/login' component={Login}/>
-         <Route path='/register' component={Register}/>
-   </Switch>
-</Router>
+    <Switch>
+      <Route path='/login' component={Login}/>
+      <Route path='/register' component={Register}/>
+      <Route path='/' component={Dashboard}/>
+    </Switch>
+  </Router>
   ,document.getElementById('app')
 );
 

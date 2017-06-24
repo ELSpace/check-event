@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 import Header from './header/Header';
 import Sidebar from './sidebar/Sidebar'; 
@@ -77,10 +77,11 @@ const Dashboard = () => (
       <Sidebar menu={menu}/>
       <Content >
         <Content.Item title="Trololo" description="huh">
-          <Switch>
+   
             <Route exact path='/' component={() => <h1>lalal</h1>} />
-            <Route path='/forms' component={() => <h1>Hallo a</h1>} />
-          </Switch>
+            <Route path='/forms' component={() => <h1>forms</h1>} />
+            <Route path='/z' component={() => <h1>z a</h1>} />
+
         </Content.Item>
         </Content>
     </div>
