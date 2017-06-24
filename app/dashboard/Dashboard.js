@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import Loadable from 'react-loading-overlay';
 
 import Header from './header/Header';
 import Sidebar from './sidebar/Sidebar'; 
@@ -79,17 +78,9 @@ const Dashboard = () => (
     
       <Sidebar menu={menu}/>
       <Content >
-        <Loadable
-            active={true}
-            animate
-            zIndex={9}
-            spinner
-            text='Loading your content...'
-            >
-          <Content.Item title="Trololo" description="huh">
-            <Route path='/forms' component={Forms}/>
-          </Content.Item>
-        </Loadable>
+        <Content.Item title="Trololo" description="huh">
+          <Route path='/forms' component={Forms}/>
+        </Content.Item>
       </Content>
         
     </div>
