@@ -1,12 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { Provider } from 'mobx-react';
+import { PrivateRoute } from './common';
 import {
   BrowserRouter as Router, 
   Route, 
   Link, 
   Switch
 } from 'react-router-dom';
-import { Provider } from 'mobx-react';
 
 // global store
 import Store from './store';
@@ -26,7 +27,12 @@ render(
       <Switch>
         <Route path='/login' component={Login}/>
         <Route path='/register' component={Register}/>
-        <Route path='/' component={Dashboard}/>
+        <PrivateRoute 
+          path='/' 
+          component={Dashboard} 
+          isAuthenticated={false} 
+          redirectTo='/login'
+        />
       </Switch>
     </Router>
   </Provider>,
