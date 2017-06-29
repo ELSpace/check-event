@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Link} from 'react-router-dom';
 import Header from './Header';
 import Social from './Social';
 import Form from './Form';
@@ -23,7 +23,9 @@ class Login extends React.Component {
           <Social msg="Or login with"/>          
           <div className="create-account">
             <p>
+              <Link to ='/register'>
               <a href="javascript:;" id="register-btn" className="uppercase">Create an account</a>
+              </Link>
             </p>
           </div>
         </div>

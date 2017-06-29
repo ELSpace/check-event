@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import { Button } from '../../../metronic/lib/ui';
 
 const Form = () => 
@@ -47,11 +48,13 @@ const Form = () =>
         <div id="register_tnc_error"> </div>
       </div>
       <div className="form-actions">
+        <Link to='/login'>
         <button type="button" id="register-back-btn" className="btn green btn-outline">Back</button>
+        </Link>
         <button type="submit" id="register-submit-btn" className="btn btn-success uppercase pull-right">Submit</button>
       </div>
   </form>
-  
+
   export default Form;
 
 
