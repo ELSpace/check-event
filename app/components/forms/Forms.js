@@ -1,5 +1,5 @@
 import React from 'react';
-import { Content } from '../../metronic';
+import { Content } from '../../metronic/layout';
 
 const Forms = () => (
   <Content.Item title="My FOrms" description="forms">

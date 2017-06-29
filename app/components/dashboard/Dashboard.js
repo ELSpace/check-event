@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { Header, Sidebar, Content } from '../../metronic';
+import { Header, Sidebar, Content } from '../../metronic/layout';
 
 // components
 import Main from '../main/Main';
