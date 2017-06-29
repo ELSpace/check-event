@@ -18,9 +18,7 @@ import Dashboard from './components/dashboard/Dashboard';
 import Register from './components/user/register/Register';
 import Login from './components/user/login/Login';
 
-
 const store = new Store();
-store.user.login()
 
 render(
   <Provider store={store}>
