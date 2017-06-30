@@ -15,9 +15,12 @@ import Store from './store';
 // load project assets
 import './assets';
 
+// Importing main components
+
 import Dashboard from './components/dashboard/Dashboard';
 import Register from './components/user/register/Register';
 import Login from './components/user/login/Login';
+import Forget from './components/user/forgetpassword/Forget';
 
 const store = new Store();
 
@@ -27,6 +30,7 @@ render(
       <Switch>
         <Route path='/login' component={Login}/>
         <Route path='/register' component={Register}/>
+        <Route path='/forget' component={Forget}/>
         <PrivateRoute 
           path='/' 
           component={Dashboard} 
