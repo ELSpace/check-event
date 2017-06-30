@@ -1,5 +1,7 @@
 import React from 'react';
 import { Button } from '../../../metronic/lib/ui';
+import {Link} from 'react-router-dom';
+
 
 const Form = () => 
   <form className="login-form" noValidate="novalidate">    
@@ -31,7 +33,8 @@ const Form = () =>
         <input type="checkbox" name="remember" defaultValue={1} />Remember    
         <span />
       </label>
-      <a id="forget-password" className="forget-password">Forgot Password?</a>
+      <Link to='/forget'>
+      <a id="forget-password" className="forget-password">Forgot Password?</a></Link>
     </div>
 
   </form>
