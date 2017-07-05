@@ -9,16 +9,16 @@ const Form = () =>
     
     <div className="alert alert-danger display-hide">
       <button className="close" data-close="alert" />
-      <span> Enter your username and password. </span>
+      <span> Enter your Email and password. </span>
     </div>
 
     <div className="form-group">
-      <label className="control-label visible-ie8 visible-ie9">Username</label>
+      <label className="control-label visible-ie8 visible-ie9">Email</label>
       <input 
         className="form-control form-control-solid placeholder-no-fix" 
         type="text" 
-        placeholder="Username" 
-        name="username" 
+        placeholder="Email" 
+        name="email" 
       /> 
     </div>
 
