@@ -46,12 +46,12 @@ const fields = [{
   name:'city',
   label:'City/Town',
   placeholder:'City/Town',
-  rules:'required|string|between:10,40',
+  rules:'required|string|between:2,40',
 },{
   name:'country',
   label:'Country',
   placeholder:'Country',
-  rules:'required|string|between:10,40', 
+  rules:'required', 
 }];
 
 export default new MyForm({ fields }, { plugins });
