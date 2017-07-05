@@ -1,40 +1,82 @@
 import React from 'react';
+import classNames from 'classnames';
 import {Link} from 'react-router-dom';
 import { Button } from '../../../metronic/lib/ui';
+import { observer } from 'mobx-react';
 
-const Form = () => 
-  <form className="register-form" action="index.html" method="post" noValidate="novalidate" style={{display: 'block'}}>
+
+
+export default observer(({form}) => (
+    <form onSubmit={form.onSubmit} className="register-form" noValidate="novalidate">
     <h3 className="font-green">REGISTER</h3>
     <p className="hint"> Enter your Association/Company details below: </p>
-    <div className="form-group">
-        <label className="control-label visible-ie8 visible-ie9">Full Name</label>
-        <input className="form-control placeholder-no-fix" type="text" placeholder="Full Name" name="fullname" /> </div>
-       <div className="form-group">
-        <label className="control-label visible-ie8 visible-ie9">Address</label>
-        <input className="form-control placeholder-no-fix" type="text" placeholder="Address" name="address" /> </div>
-    <div className="form-group">
-        <label className="control-label visible-ie8 visible-ie9">City/Town</label>
-        <input className="form-control placeholder-no-fix" type="text" placeholder="City/Town" name="city" /> </div>
-    <div className="form-group">
-        <label className="control-label visible-ie8 visible-ie9">Country</label>
-        <select name="country" className="form-control">
+
+    <div className={"form-group " + (form.$('fullname').hasError ? 'has-error' : '')}>
+        <label className="control-label visible-ie8 visible-ie9" htmlFor={form.$('fullname').id}>
+          {form.$('fullname').label}
+        </label>
+        <input className="form-control placeholder-no-fix"
+        type="text"
+          {...form.$('fullname').bind()}/>
+        <span className="help-block"> {form.$('fullname').error} </span>
+         </div>
+   
+       <div className={"form-group " + (form.$('address').hasError ? 'has-error' : '')}>
+        <label className="control-label visible-ie8 visible-ie9" htmlFor={form.$('address').id}>
+          {form.$('address').label}
+          </label>
+        <input className="form-control placeholder-no-fix"
+         type="text"
+           {...form.$('address').bind()} />
+          <span className="help-block"> {form.$('address').error} </span>
+           </div>
+         
+    <div className={"form-group " + (form.$('city').hasError ? 'has-error' : '')}>
+        <label className="control-label visible-ie8 visible-ie9" htmlFor={form.$('city').id}>
+         {form.$('city').label}
+        </label>
+        <input className="form-control placeholder-no-fix" type="text" {...form.$('city').bind()} /> 
+        <span className="help-block"> {form.$('city').error} </span>
+        </div>
+     
+    <div className={"form-group " + (form.$('country').hasError ? 'has-error' : '')}>
+        <label className="control-label visible-ie8 visible-ie9" htmlFor={form.$('country').id}>
+         {form.$('country').label}
+         </label>
+        <select name="country" className="form-control" {...form.$('country').bind()}>
           <option value>Country</option>
           <option value="FR">France</option>               
           <option value="TN">Tunisia</option>               
           <option value="GB">United Kingdom</option>
           <option value="US">United States</option>              
         </select>
-      </div>
+        <span className="help-block"> {form.$('country').error} </span>     
+     </div> 
+          
       <p className="hint"> Enter your Association/Company details below: </p>
-      <div className="form-group">
-        <label className="control-label visible-ie8 visible-ie9">Email</label>
-        <input className="form-control placeholder-no-fix" type="text" autoComplete="off" placeholder="Email" name="email" /> </div>
-      <div className="form-group">
-        <label className="control-label visible-ie8 visible-ie9">Password</label>
-        <input className="form-control placeholder-no-fix" type="password" autoComplete="off" id="register_password" placeholder="Password" name="password" /> </div>
-      <div className="form-group">
-        <label className="control-label visible-ie8 visible-ie9">Re-type Your Password</label>
-        <input className="form-control placeholder-no-fix" type="password" autoComplete="off" placeholder="Re-type Your Password" name="rpassword" /> </div>
+      <div className={"form-group " + (form.$('email').hasError ? 'has-error' : '')}>
+        <label className="control-label visible-ie8 visible-ie9" htmlFor={form.$('email').id}>
+        {form.$('email').label}
+        </label>
+        <input className="form-control placeholder-no-fix" type="text" {...form.$('email').bind()} />
+        <span className="help-block"> {form.$('email').error} </span>
+         </div>
+
+      <div className={"form-group " + (form.$('password').hasError ? 'has-error' : '')}>
+        <label className="control-label visible-ie8 visible-ie9" htmlFor={form.$('password').id}>
+         {form.$('password').label}
+        </label>
+        <input className="form-control placeholder-no-fix" type="password" {...form.$('password').bind()} />
+         <span className="help-block"> {form.$('password').error} </span>
+         </div>
+      <div className={"form-group " + (form.$('rpassword').hasError ? 'has-error' : '')}>
+        <label className="control-label visible-ie8 visible-ie9" htmlFor={form.$('rpassword').id}>
+         {form.$('rpassword').label}
+         </label>
+        <input className="form-control placeholder-no-fix" type="password" {...form.$('rpassword').bind()} />
+         <span className="help-block"> {form.$('rpassword').error} </span>
+         </div>
+         
       <div className="form-group margin-top-20 margin-bottom-20">
         <label className="mt-checkbox mt-checkbox-outline">
           <input type="checkbox" name="tnc" /> I agree to the
@@ -43,16 +85,17 @@ const Form = () =>
           <span />
         </label>
         <div id="register_tnc_error"> </div>
-      </div>
+      </div> 
       <div className="form-actions">
         <Link to='/login'>
         <button type="button" id="register-back-btn" className="btn green btn-outline">Back</button>
         </Link>
-        <button type="submit" id="register-submit-btn" className="btn btn-success uppercase pull-right">Submit</button>
+        <button type="submit" onClick={form.onSubmit} className="btn btn-success uppercase pull-right">Submit</button>
       </div>
+    <p>{form.error}</p>
   </form>
+));
 
-  export default Form;
 
 
 
