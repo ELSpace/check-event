@@ -23,8 +23,8 @@ class Login extends React.Component {
           <Social msg="Or login with"/>          
           <div className="create-account">
             <p>
-              <Link to ='/register'>
-              <a href="javascript:;" id="register-btn" className="uppercase">Create an account</a>
+              <Link to ='/register' className="uppercase">
+                 Create an account
               </Link>
             </p>
           </div>
