@@ -36,7 +36,7 @@ const fields = [{
   name:'fullname',
   label:'Full Name',
   placeholder:'Full Name',
-  rules:'required|string|between:10,25',
+  rules:'required|string|between:5,50',
 },{
   name:'address',
   label:'Address',
