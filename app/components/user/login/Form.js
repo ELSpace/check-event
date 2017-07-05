@@ -7,8 +7,7 @@ import { observer } from 'mobx-react';
 export default observer(({form}) => (
   <form onSubmit={form.onSubmit} className="login-form" noValidate="novalidate">    
     <h3 className="form-title font-green">LOGIN</h3>
-    
-    <div className="alert alert-danger display-hide">
+      <div className="alert alert-danger display-hide">
       <button className="close" data-close="alert" />
       <span> Enter your Email and password. </span>
     </div>
@@ -26,7 +25,7 @@ export default observer(({form}) => (
 
     </div>
 
-    <div className={"form-group " + (form.$('email').hasError ? 'has-error' : '')}>
+    <div className={"form-group " + (form.$('password').hasError ? 'has-error' : '')}>
       <label className="control-label visible-ie8 visible-ie9" htmlFor={form.$('password').id}>
         {form.$('password').label}
       </label>
