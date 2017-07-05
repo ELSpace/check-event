@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import Header from './Header';
 import Social from './Social';
+import MyForm from './MyForm';
 import Form from './Form';
 
 import '../style.css';
@@ -19,7 +20,7 @@ class Login extends React.Component {
       <div>
         <div className="content">
           <Header src={logo} />
-          <Form />
+          <Form form={MyForm}/>
           <Social msg="Or login with"/>          
           <div className="create-account">
             <p>
