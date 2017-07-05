@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../login/Header';
 import Form from './Form';
+import MyForm from './MyForm';
 import '../style.css';
 import logo from '../../../assets/img/elspacelogo.png'
 

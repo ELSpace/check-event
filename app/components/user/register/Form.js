@@ -1,9 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import { Button } from '../../../metronic/lib/ui';
+import classNames from 'classnames';
+import { observer } from 'mobx-react';
 
-const Form = () => 
-  <form className="register-form" action="index.html" method="post" noValidate="novalidate" style={{display: 'block'}}>
+
+
+export default observer(({form}) => (
+    <form onSubmit={form.onSubmit} className="register-form" action="index.html"  noValidate="novalidate" style={{display: 'block'}}>
     <h3 className="font-green">REGISTER</h3>
     <p className="hint"> Enter your Association/Company details below: </p>
     <div className="form-group">
@@ -51,8 +55,8 @@ const Form = () =>
         <button type="submit" id="register-submit-btn" className="btn btn-success uppercase pull-right">Submit</button>
       </div>
   </form>
+));
 
-  export default Form;
 
 
 
