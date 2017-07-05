@@ -10,7 +10,7 @@ export default observer(({form}) => (
     
     <div className="alert alert-danger display-hide">
       <button className="close" data-close="alert" />
-      <span> Enter your username and password. </span>
+      <span> Enter your Email and password. </span>
     </div>
 
     <div className={"form-group " + (form.$('email').hasError ? 'has-error' : '')}>
@@ -23,6 +23,7 @@ export default observer(({form}) => (
         {...form.$('email').bind()}
       />
       <span className="help-block"> {form.$('email').error} </span>
+
     </div>
 
     <div className={"form-group " + (form.$('email').hasError ? 'has-error' : '')}>
@@ -44,9 +45,10 @@ export default observer(({form}) => (
         <input type="checkbox" name="remember" defaultValue={1} />Remember    
         <span />
       </label>
-      <Link to='/forget'>
-        <a id="forget-password" className="forget-password">Forgot Password?</a>
+      <Link to='/forget' className="forget-password">
+        Forgot Password?
       </Link>
+
     </div>
 
   </form>

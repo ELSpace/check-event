@@ -5,14 +5,11 @@ import { Button } from '../../../metronic/lib/ui';
 const Form = () => 
   <form className="register-form" action="index.html" method="post" noValidate="novalidate" style={{display: 'block'}}>
     <h3 className="font-green">REGISTER</h3>
-    <p className="hint"> Enter your personal details below: </p>
+    <p className="hint"> Enter your Association/Company details below: </p>
     <div className="form-group">
         <label className="control-label visible-ie8 visible-ie9">Full Name</label>
         <input className="form-control placeholder-no-fix" type="text" placeholder="Full Name" name="fullname" /> </div>
-    <div className="form-group">       
-        <label className="control-label visible-ie8 visible-ie9">Email</label>
-        <input className="form-control placeholder-no-fix" type="text" placeholder="Email" name="email" /> </div>
-    <div className="form-group">
+       <div className="form-group">
         <label className="control-label visible-ie8 visible-ie9">Address</label>
         <input className="form-control placeholder-no-fix" type="text" placeholder="Address" name="address" /> </div>
     <div className="form-group">
@@ -28,10 +25,10 @@ const Form = () =>
           <option value="US">United States</option>              
         </select>
       </div>
-      <p className="hint"> Enter your account details below: </p>
+      <p className="hint"> Enter your Association/Company details below: </p>
       <div className="form-group">
-        <label className="control-label visible-ie8 visible-ie9">Username</label>
-        <input className="form-control placeholder-no-fix" type="text" autoComplete="off" placeholder="Username" name="username" /> </div>
+        <label className="control-label visible-ie8 visible-ie9">Email</label>
+        <input className="form-control placeholder-no-fix" type="text" autoComplete="off" placeholder="Email" name="email" /> </div>
       <div className="form-group">
         <label className="control-label visible-ie8 visible-ie9">Password</label>
         <input className="form-control placeholder-no-fix" type="password" autoComplete="off" id="register_password" placeholder="Password" name="password" /> </div>
