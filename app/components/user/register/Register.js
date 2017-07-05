@@ -14,11 +14,9 @@ class Register extends React.Component {
       <div>
         <div className="content">
           <Header src={logo} />
-          <Form />      
-                  
+          <Form form={MyForm}/>                  
         </div>
       </div>
-    
     )
   }
 }
