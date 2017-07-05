@@ -33,8 +33,8 @@ const Form = () =>
         <input type="checkbox" name="remember" defaultValue={1} />Remember    
         <span />
       </label>
-      <Link to='/forget'>
-      <a id="forget-password" className="forget-password">Forgot Password?</a></Link>
+      <Link to='/forget' className="forget-password">
+      Forgot Password?</Link>
     </div>
 
   </form>
