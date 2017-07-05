@@ -7,7 +7,7 @@ import { observer } from 'mobx-react';
 
 
 export default observer(({form}) => (
-    <form onSubmit={form.onSubmit} className="register-form" noValidate="novalidate">
+    <form onSubmit={form.onSubmit} className="register-form" noValidate="novalidate" style={{display: 'block'}}>
     <h3 className="font-green">REGISTER</h3>
     <p className="hint"> Enter your Association/Company details below: </p>
 
