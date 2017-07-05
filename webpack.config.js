@@ -10,6 +10,7 @@ const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
 
 module.exports = {
   entry: [
+    'babel-polyfill',
     __dirname + '/app/index.js'
   ],
 
