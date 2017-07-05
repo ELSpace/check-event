@@ -1,10 +1,11 @@
 import React from 'react';
+import classNames from 'classnames';
 import { Button } from '../../../metronic/lib/ui';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { observer } from 'mobx-react';
 
-
-const Form = () => 
-  <form className="login-form" noValidate="novalidate">    
+export default observer(({form}) => (
+  <form onSubmit={form.onSubmit} className="login-form" noValidate="novalidate">    
     <h3 className="form-title font-green">LOGIN</h3>
     
     <div className="alert alert-danger display-hide">
@@ -12,20 +13,30 @@ const Form = () =>
       <span> Enter your username and password. </span>
     </div>
 
-    <div className="form-group">
-      <label className="control-label visible-ie8 visible-ie9">Username</label>
+    <div className={"form-group " + (form.$('email').hasError ? 'has-error' : '')}>
+      <label className="control-label visible-ie8 visible-ie9" htmlFor={form.$('email').id}>
+        {form.$('email').label}
+      </label>
       <input 
         className="form-control form-control-solid placeholder-no-fix" 
-        type="text" 
-        placeholder="Username" 
-        name="username" 
-      /> 
+        type="text"
+        {...form.$('email').bind()}
+      />
+      <span className="help-block"> {form.$('email').error} </span>
     </div>
 
-    <div className="form-group">
+    <div className={"form-group " + (form.$('email').hasError ? 'has-error' : '')}>
+      <label className="control-label visible-ie8 visible-ie9" htmlFor={form.$('password').id}>
+        {form.$('password').label}
+      </label>
+      <input 
+        className="form-control form-control-solid placeholder-no-fix" 
+        type="password" 
+        {...form.$('password').bind()}
+      /> 
 
-    <label className="control-label visible-ie8 visible-ie9">Password</label>
-    <input className="form-control form-control-solid placeholder-no-fix" type="password" autoComplete="off" placeholder="Password" name="password" /> </div>
+      <span className="help-block"> {form.$('password').error} </span>
+    </div>
     
     <div className="form-actions">
       <Button text="Login" color="green" />
@@ -34,9 +45,9 @@ const Form = () =>
         <span />
       </label>
       <Link to='/forget'>
-      <a id="forget-password" className="forget-password">Forgot Password?</a></Link>
+        <a id="forget-password" className="forget-password">Forgot Password?</a>
+      </Link>
     </div>
 
   </form>
-  
-export default Form;
+));
