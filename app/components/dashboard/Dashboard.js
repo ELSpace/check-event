@@ -5,6 +5,7 @@ import { Header, Sidebar, Content } from '../../metronic/layout';
 // components
 import Main from '../main/Main';
 import Forms from '../forms/Forms';
+import Settings from '../settings/Settings';
 
 // assets
 import logo from '../../assets/img/logo.png';
@@ -58,6 +59,12 @@ const menu = [
     title: 'Forms',
     url: '/forms'
   },
+  {
+    id:3,
+    icon:'icon-settings',
+    title:'Settings',
+    url:'/settings',
+  }
 ]
 
 const Dashboard = () => (
@@ -84,6 +91,7 @@ const Dashboard = () => (
       <Content>
         <Route exact path='/' component={Main} />
         <Route path='/forms' component={Forms}/>
+        <Route path='/settings' component={Settings}/>
       </Content>
     </div>
     

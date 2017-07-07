@@ -34,7 +34,7 @@ render(
         <PrivateRoute 
           path='/' 
           component={Dashboard} 
-          isAuthenticated={false} 
+          isAuthenticated={true} 
           redirectTo='/login'
         />
       </Switch>
