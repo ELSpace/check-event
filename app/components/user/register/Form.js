@@ -66,14 +66,14 @@ export default observer(({form}) => (
         <label className="control-label visible-ie8 visible-ie9" htmlFor={form.$('password').id}>
          {form.$('password').label}
         </label>
-        <input className="form-control placeholder-no-fix" type="password" {...form.$('password').bind()} />
+        <input className="form-control placeholder-no-fix" type="password" {...form.$('password').bind({ type: 'password' })} />
          <span className="help-block"> {form.$('password').error} </span>
          </div>
       <div className={"form-group " + (form.$('rpassword').hasError ? 'has-error' : '')}>
         <label className="control-label visible-ie8 visible-ie9" htmlFor={form.$('rpassword').id}>
          {form.$('rpassword').label}
          </label>
-        <input className="form-control placeholder-no-fix" type="password" {...form.$('rpassword').bind()} />
+        <input className="form-control placeholder-no-fix" type="password" {...form.$('rpassword').bind({ type: 'password' })} />
          <span className="help-block"> {form.$('rpassword').error} </span>
          </div>
          

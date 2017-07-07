@@ -35,7 +35,7 @@ export default observer(({form}) => (
       <input 
         className="form-control form-control-solid placeholder-no-fix" 
         type="password" 
-        {...form.$('password').bind()}
+        {...form.$('password').bind({ type: 'password' })}
       /> 
 
       <span className="help-block"> {form.$('password').error} </span>
