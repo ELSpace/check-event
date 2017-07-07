@@ -4,6 +4,9 @@ import { Button } from '../../../metronic/lib/ui';
 import { Link } from 'react-router-dom';
 import { observer } from 'mobx-react';
 
+
+
+
 export default observer(({form}) => (
   <form onSubmit={form.onSubmit} className="login-form" noValidate="novalidate">    
     <h3 className="form-title font-green">LOGIN</h3>
@@ -39,7 +42,7 @@ export default observer(({form}) => (
     </div>
     
     <div className="form-actions">
-      <Button text="Login" color="green" />
+      <Button text="Login" color="green"/>
       <label className="rememberme check mt-checkbox mt-checkbox-outline">
         <input type="checkbox" name="remember" defaultValue={1} />Remember    
         <span />
