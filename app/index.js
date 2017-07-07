@@ -1,4 +1,5 @@
 import React from 'react';
+import DevTools from 'mobx-react-devtools'
 import { render } from 'react-dom';
 import { Provider } from 'mobx-react';
 import { PrivateRoute } from './common';
@@ -34,13 +35,13 @@ render(
         <PrivateRoute 
           path='/' 
           component={Dashboard} 
-          isAuthenticated={false} 
+          isAuthenticated={store.user.isLoggedIn}
           redirectTo='/login'
         />
       </Switch>
-    </Router>
+    </Router>    
   </Provider>,
-   
+
   document.getElementById('app')
 );
 
