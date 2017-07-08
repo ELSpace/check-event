@@ -21,6 +21,7 @@ import Dashboard from './components/dashboard/Dashboard';
 import Register from './components/user/register/Register';
 import Login from './components/user/login/Login';
 import Forget from './components/user/forgetpassword/Forget';
+import Logout from './components/user/logout/logout';
 
 const store = new Store();
 
@@ -31,9 +32,10 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <Switch>
-            <Route path='/login' component={Login}/>
-            <Route path='/register' component={Register}/>
-            <Route path='/forget' component={Forget}/>
+            <Route path='/login' component={Login} />
+            <Route path='/register' component={Register} />
+            <Route path='/forget' component={Forget} />
+            <Route path='/logout' component={Logout} />
             <PrivateRoute 
               path='/' 
               component={Dashboard} 
