@@ -9,8 +9,6 @@ import '../metronic/theme/css/components-md.css';
 import '../metronic/theme/css/layout.css'; 
 import '../metronic/theme/css/blue.css';
 
-import './pace.css';
-
 // JS  
 require('bootstrap/dist/js/bootstrap.js'); 
 require('bootstrap-switch/dist/js/bootstrap-switch.js'); 
