@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const ProfileItem = ({icon, title, badge, badgeColor, url, onClick}) => (
   <li>
-    <a href={url} onClick={onClick}>
+    <Link to={url} onClick={onClick}>
       <i className={icon}></i> {title}
       {badge && <span className={`badge badge-${badgeColor}`} > {badge} </span>}
-    </a>
+    </Link>
   </li>
 );
 
