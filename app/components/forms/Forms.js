@@ -24,7 +24,7 @@ const Forms = () => (
           <div className="row">
             <div className="col-md-6">
               <div className="btn-group">
-                <Link to='/new'>
+                <Link to='/forms/new'>
                 <button id="sample_editable_1_new" className="btn green"> Add New
                   <i className="fa fa-plus" />
                 </button>
