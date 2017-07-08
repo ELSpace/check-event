@@ -1,20 +1,22 @@
 import React from 'react';
-import { Content } from '../../metronic/layout';
-
-const New = () => (
-  <Content.Item title="New Form" description="new form">
-
+import { Content } from '../../../metronic/layout';
+import {Link} from 'react-router-dom';
+import {formBuilder} from 'formBuilder';
 
 
+class New extends React.Component {
+  
+  render() {
+    return (
+   <div id="builder" >
+ 
 
+   </div>
+);}
+componentDidMount() {
+  $('#builder').formBuilder();
+}
 
-
-
-
-
-
-  </Content.Item>
-);
-
+}
 
 export default New;
