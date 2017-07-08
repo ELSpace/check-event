@@ -9,7 +9,11 @@ class New extends Component {
       <Content.Item title="New Form" description="create a new form">
         <div className="row">
           <div className="col-md-6 col-md-offset-3">
+              <div className="form-inline">
+              <label htmlfor="formname">Form Name : </label>
+               <input type="text" className="form-control" id="formname"/> 
             <div id="builder" ></div>
+            </div>
           </div>
         </div>
       </Content.Item>
