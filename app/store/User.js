@@ -1,7 +1,6 @@
 import { observable, action } from 'mobx';
 import feathersClient from '../services/feathers';
 
-
 export default class User {
 
   @observable user;
@@ -41,6 +40,13 @@ export default class User {
     feathersClient.set('user', user);
     this.user = user;
     this.isLoggedIn = true;
+  }
+
+  @action.bound logout = async () => {
+    await feathersClient.logout();
+    this.isLoggedIn = false;
+    this.user = null;
+    return;
   }
 
 }
