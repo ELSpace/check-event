@@ -2674,6 +2674,13 @@ form-data@~2.1.1:
     combined-stream "^1.0.5"
     mime-types "^2.1.12"
 
+formBuilder@^2.5.3:
+  version "2.5.3"
+  resolved "https://registry.yarnpkg.com/formBuilder/-/formBuilder-2.5.3.tgz#2b5b59c1a5eb2bcd635dae5a72312068dae14711"
+  dependencies:
+    jquery "^3.1.1"
+    jquery-ui-sortable "*"
+
 forwarded@~0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/forwarded/-/forwarded-0.1.0.tgz#19ef9874c4ae1c297bcf078fde63a09b66a84363"
@@ -3427,7 +3434,11 @@ jquery-slimscroll@^1.3.8:
   dependencies:
     jquery ">= 1.7"
 
-"jquery@2 - 3", "jquery@>= 1.7", jquery@>=1.10, jquery@>=1.7.x:
+jquery-ui-sortable@*:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/jquery-ui-sortable/-/jquery-ui-sortable-1.0.0.tgz#0ee062ce02b29b36585ede3a3e0ddde666060f96"
+
+"jquery@2 - 3", "jquery@>= 1.7", jquery@>=1.10, jquery@>=1.7.x, jquery@^3.1.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
 
