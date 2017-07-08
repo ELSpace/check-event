@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ContentItem = ({title , description, children}) => (
-  <div className="page-content">
+  <div className="page-content" style={{minHeight: 1440}}>
     <h1 className="page-title"> {title}
       <small> {description} </small>
     </h1>
