@@ -65,6 +65,7 @@
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-loading-overlay": "^0.2.5",
     "react-router-dom": "^4.1.1",
     "request": "^2.81.0",
     "request-promise": "^4.2.1",
