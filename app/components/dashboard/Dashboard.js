@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
+import { observer, inject } from 'mobx-react';
 import { Header, Sidebar, Content } from '../../metronic/layout';
 
 // components
@@ -11,92 +12,48 @@ import Settings from '../settings/Settings';
 import logo from '../../assets/img/logo.png';
 import pic from '../../assets/img/avatar11.jpg';
 
-const actions = [
-  {
-    id: 1,
-    title: "New Post",
-    icon: "icon-doc",
-    url: "/"
-  },
-  {
-    id: 2,
-    title: "New Post",
-    icon: "icon-doc",
-    url: "/"
+import { routes, actions, profileItems } from '../../common'
+
+@inject('store')
+@observer
+class Dashboard extends Component {
+  
+  componentWillMount() {
+    window.$('body').attr('class', 'page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-md');
   }
-];
-
-const profileItems = [
-  {
-    id: 1,
-    icon: 'icon-envelope-open',
-    title: 'My Inbox',
-    badge: 3,
-    badgeColor: 'danger',
-    url: '/'
-  },
-  {
-    id: 2,
-    icon: 'icon-key',
-    title: 'Logout',
-    url: '/'
-  },
-];
-
-const menu = [
-  {
-    id: 1,
-    open: true,
-    active: true,
-    icon: 'icon-home',
-    title: 'Dashboard',
-    url: '/'
-  },
-
-  {
-    id: 2,
-    icon: 'icon-doc',
-    title: 'Forms',
-    url: '/forms'
-  },
-  {
-    id:3,
-    icon:'icon-settings',
-    title:'Settings',
-    url:'/settings',
+  
+  render() {
+    return (
+      <div>
+        <Header logo={logo} >
+          <Header.Actions actions={actions} />
+          <Header.PageWrapper>
+            <Header.SearchForm placeholder="Search..." />
+            <Header.TopMenuWrapper>
+              <Header.DropdownMenu 
+                icon="icon-bell" 
+                badge="4"
+                title="You have 4 notification"
+              >
+              {/* TODO create drop down menu items */}
+              </Header.DropdownMenu>
+              <Header.Profile name="fullname" pic={pic} items={profileItems}/>       
+            </Header.TopMenuWrapper> 
+          </Header.PageWrapper>    
+        </Header>
+        
+        <div className="page-container">
+          <Sidebar menu={routes}/>
+          <Content>
+            <Route exact path='/' component={Main} />
+            <Route path='/forms' component={Forms}/>
+            <Route path='/settings' component={Settings}/>
+          </Content>
+        </div>
+      
+      </div>
+    );
   }
-]
-
-const Dashboard = () => (
-  <div>
-    <Header logo={logo} >
-      <Header.Actions actions={actions} />
-      <Header.PageWrapper>
-        <Header.SearchForm placeholder="Search..." />
-        <Header.TopMenuWrapper>
-          <Header.DropdownMenu 
-            icon="icon-bell" 
-            badge="4"
-            title="You have 4 notification"
-          >
-          {/* TODO create drop down menu items */}
-          </Header.DropdownMenu>
-          <Header.Profile name="fullname" pic={pic} items={profileItems}/>       
-        </Header.TopMenuWrapper> 
-      </Header.PageWrapper>    
-    </Header>
-    
-    <div className="page-container">
-      <Sidebar menu={menu}/>
-      <Content>
-        <Route exact path='/' component={Main} />
-        <Route path='/forms' component={Forms}/>
-        <Route path='/settings' component={Settings}/>
-      </Content>
-    </div>
-    
-  </div>  
- 
-);
+}
 
 export default Dashboard;

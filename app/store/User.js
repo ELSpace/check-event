@@ -5,11 +5,17 @@ import feathersClient from '../services/feathers';
 export default class User {
 
   @observable user;
-  @observable token;
-  @observable isLoggedIn = false;
+  @observable isLoggedIn;
+
+  @action.bound checkAuthState = async () => {
+    const token = await feathersClient.passport.getJWT();
+    this.isLoggedIn = token ? true : false;
+
+    return;
+  }
 
   @action.bound profile = async () => {
-    this.token = await feathersClient.passport.getJWT();
+    const token = await feathersClient.passport.getJWT();
     
     if (!token) throw new Error('Not logged in');    
     
