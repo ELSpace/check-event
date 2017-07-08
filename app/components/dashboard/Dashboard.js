@@ -7,6 +7,7 @@ import { Header, Sidebar, Content } from '../../metronic/layout';
 import Main from '../main/Main';
 import Forms from '../forms/Forms';
 import Settings from '../settings/Settings';
+import New from '../forms/new/New';
 
 // assets
 import logo from '../../assets/img/logo.png';
@@ -46,7 +47,8 @@ class Dashboard extends Component {
           <Sidebar menu={routes}/>
           <Content>
             <Route exact path='/' component={Main} />
-            <Route path='/forms' component={Forms}/>
+            <Route exact path='/forms' component={Forms}/>
+            <Route path='/forms/new' component={New}/>
             <Route path='/settings' component={Settings}/>
           </Content>
         </div>
