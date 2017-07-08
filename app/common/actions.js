@@ -1,14 +1,8 @@
 export default [
   {
     id: 1,
-    title: "New Post",
+    title: "New Form",
     icon: "icon-doc",
-    url: "/"
-  },
-  {
-    id: 2,
-    title: "New Post",
-    icon: "icon-doc",
-    url: "/"
+    url: "/forms/new"
   }
 ];
