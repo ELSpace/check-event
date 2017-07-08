@@ -22,6 +22,7 @@ import Register from './components/user/register/Register';
 import Login from './components/user/login/Login';
 import Forget from './components/user/forgetpassword/Forget';
 import Logout from './components/user/logout/logout';
+import New from './components/forms/new/New';
 
 const store = new Store();
 
@@ -36,6 +37,7 @@ class App extends Component {
             <Route path='/register' component={Register} />
             <Route path='/forget' component={Forget} />
             <Route path='/logout' component={Logout} />
+            <Route path='/new' component={New}/>
             <PrivateRoute 
               path='/' 
               component={Dashboard} 
