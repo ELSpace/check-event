@@ -7,7 +7,7 @@ const SearchForm = ({placeholder}) => (
       <input type="text" className="form-control" placeholder={placeholder} />
       <span className="input-group-btn">
         <a className="btn submit">
-          <i className="icon-magnifier" />
+          <i className="fa fa-search" />
         </a>
       </span>
     </div>

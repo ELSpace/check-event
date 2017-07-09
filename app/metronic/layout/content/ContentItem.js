@@ -9,7 +9,7 @@ const ContentItem = ({title , description, children}) => (
     <div className="page-bar">
       <ul className="page-breadcrumb">
         <li>
-          <i className="icon-home" />
+          <i className="fa fa-home" />
           <a href="index.html">Home</a>
           <i className="fa fa-angle-right" />
         </li>

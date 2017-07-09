@@ -3,20 +3,20 @@ export default [
     id: 1,
     open: true,
     active: true,
-    icon: 'icon-home',
+    icon: 'fa fa-home',
     title: 'Dashboard',
     url: '/'
   },
 
   {
     id: 2,
-    icon: 'icon-doc',
+    icon: 'fa fa-wpforms',
     title: 'Forms',
     url: '/forms'
   },
   {
     id:3,
-    icon:'icon-settings',
+    icon:'fa fa-cog',
     title:'Settings',
     url:'/settings',
   }
