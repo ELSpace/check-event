@@ -10,7 +10,7 @@ class New extends Component {
         <div className="row">
           <div className="col-md-6 col-md-offset-3">
               <div className="form-inline">
-              <label htmlfor="formname">Form Name : </label>
+              <label htmlFor="formname">Form Name : </label>
                <input type="text" className="form-control" id="formname"/> 
             <div id="builder" ></div>
             </div>

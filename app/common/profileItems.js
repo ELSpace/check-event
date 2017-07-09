@@ -1,7 +1,7 @@
 export default [
   {
     id: 1,
-    icon: 'icon-key',
+    icon: 'fa fa-sign-out',
     title: 'Logout',
     url: '/logout'
   },

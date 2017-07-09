@@ -32,7 +32,7 @@ class Dashboard extends Component {
             <Header.SearchForm placeholder="Search..." />
             <Header.TopMenuWrapper>
               <Header.DropdownMenu 
-                icon="icon-bell" 
+                icon="fa fa-bell" 
                 badge="4"
                 title="You have 4 notification"
               >

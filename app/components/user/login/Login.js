@@ -62,8 +62,8 @@ class Login extends Component {
       <div>
         <div className="content">
           <Header src={logo} />
-          <Form form={instance}/>
-          <Social msg="Or login with"/>          
+          <Form form={instance}/> 
+          <Social msg="Or Login With"/>                
           <div className="create-account">
             <p>
               <Link to ='/register' className="uppercase">

@@ -7,7 +7,7 @@ const Forms = () => (
     <div className="portlet light portlet-fit ">
       <div className="portlet-title">
         <div className="caption">
-          <i className="icon-settings font-red" />
+          <i className="fa fa-cog" />
           <span className="caption-subject font-red sbold uppercase">Editable Table</span>
         </div>
         <div className="actions">

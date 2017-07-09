@@ -8,15 +8,9 @@ const Social = ({msg}) =>
       <li>
         <a className="social-icon-color facebook" data-original-title="facebook"/>
       </li>
-      <li>
-        <a className="social-icon-color twitter" data-original-title="Twitter"/>
-      </li>
-      <li>
+       <li>
         <a className="social-icon-color googleplus" data-original-title="Goole Plus"/>
-      </li>
-      <li>
-        <a className="social-icon-color linkedin" data-original-title="Linkedin"/>
-      </li>
+      </li>   
     </ul>
   </div>;
 

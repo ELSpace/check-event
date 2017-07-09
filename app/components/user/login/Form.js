@@ -52,6 +52,6 @@ export default observer(({form}) => (
       </Link>
 
     </div>
-
+          
   </form>
 ));
