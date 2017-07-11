@@ -17,8 +17,9 @@ export default class User {
     const token = await feathersClient.passport.getJWT();
     
     if (!token) throw new Error('Not logged in');    
+    this.user = await feathersClient.get('user');
     
-    if (this.user = feathersClient.set('user')) return;
+    if (this.user) return;    
 
     return await this.get(token);
   }
@@ -59,5 +60,6 @@ export default class User {
 
     return await this.get(response.accessToken);
   }
+  
 }
 

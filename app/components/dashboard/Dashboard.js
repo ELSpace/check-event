@@ -13,7 +13,7 @@ import New from '../forms/new/New';
 import logo from '../../assets/img/logo.png';
 import pic from '../../assets/img/avatar11.jpg';
 
-import { routes, actions, profileItems } from '../../common'
+import { routes, actions, profileItems } from '../../common';
 
 @inject('store')
 @observer
@@ -21,6 +21,7 @@ class Dashboard extends Component {
   
   componentWillMount() {
     window.$('body').attr('class', 'page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-md');
+    this.props.store.user.profile();
   }
   
   render() {
@@ -38,7 +39,7 @@ class Dashboard extends Component {
               >
               {/* TODO create drop down menu items */}
               </Header.DropdownMenu>
-              <Header.Profile name="fullname" pic={pic} items={profileItems}/>       
+              <Header.Profile name={this.props.store.user.user && this.props.store.user.user.fullname} pic={pic} items={profileItems}/>       
             </Header.TopMenuWrapper> 
           </Header.PageWrapper>    
         </Header>
