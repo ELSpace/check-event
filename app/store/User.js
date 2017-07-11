@@ -49,5 +49,15 @@ export default class User {
     return;
   }
 
+  @action.bound register = async values => {
+    await feathersClient.service('users').create(values);
+    const response = await feathersClient.authenticate({
+      strategy: 'local',
+      email: values.email,
+      password: values.password
+    });
+
+    return await this.get(response.accessToken);
+  }
 }
 
