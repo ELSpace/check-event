@@ -2620,9 +2620,9 @@ feathers-hooks@^2.0.1:
     feathers-commons "^0.8.6"
     uberproto "^1.2.0"
 
-feathers-mongoose@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/feathers-mongoose/-/feathers-mongoose-5.1.0.tgz#56cc94b631bb5177dc601d3579a425594080bd8a"
+feathers-mongoose@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/feathers-mongoose/-/feathers-mongoose-5.1.1.tgz#32ab83cda2eab191eba888040d70d6291eeb1047"
   dependencies:
     feathers-commons "^0.8.4"
     feathers-errors "^2.0.1"
