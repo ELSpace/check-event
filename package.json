@@ -49,6 +49,7 @@
     "feathers-errors": "^2.8.1",
     "feathers-hooks": "^2.0.1",
     "feathers-hooks-common": "^3.5.5",
+    "feathers-hooks-validate-joi": "^1.0.1",
     "feathers-mongoose": "^5.1.0",
     "feathers-rest": "^1.7.3",
     "feathers-socketio": "^2.0.0",
