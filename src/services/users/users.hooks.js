@@ -31,8 +31,8 @@ module.exports = {
     find: [ authenticate('jwt') ],
     get: [ ...restrict ],
     create: [ validate.form(schema, joiOptions), hashPassword() ],
-    update: [ ...restrict, hashPassword() ],
-    patch: [ ...restrict, hashPassword() ],
+    update: [ validate.form(schema, joiOptions), ...restrict, hashPassword() ],
+    patch: [ validate.form(schema, joiOptions), ...restrict, hashPassword() ],
     remove: [ ...restrict ]
   },
 
