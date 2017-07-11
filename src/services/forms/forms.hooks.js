@@ -1,14 +1,23 @@
 const { authenticate } = require('feathers-authentication').hooks;
+const { restrictToOwner } = require('feathers-authentication-hooks');
+
+const restrict = [
+  authenticate('jwt'),
+  restrictToOwner({
+    idField: '_id',
+    ownerField: 'userId'
+  })
+];
 
 module.exports = {
   before: {
-    all: [ authenticate('jwt') ],
-    find: [],
+    all: [],
+    find: [ ...restrict ],
     get: [],
-    create: [],
-    update: [],
-    patch: [],
-    remove: []
+    create: [  ],
+    update: [ ...restrict ],
+    patch: [ ...restrict ],
+    remove: [ ...restrict ]
   },
 
   after: {
