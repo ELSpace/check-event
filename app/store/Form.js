@@ -9,12 +9,12 @@ export default class Form {
   @action.bound create = async data => {
     try {
       const user = await feathersClient.get('user');
-      const response = await feathersClient.service('forms').create({
+      const form = await feathersClient.service('forms').create({
         fields: data,
         name: 'Hallleluya form',
         userId: user._id
       });
-      console.log(response);
+      this.forms.push(form);
     } catch(e) {
       console.log(e);
       console.log(e.response);
@@ -25,9 +25,10 @@ export default class Form {
     //this.singleForm = await feathersClient.service('forms')
   }
 
-  @action.bound get = async () => {
-    this.forms = await feathersClient.service('forms')
-      .get();
+  @action.bound find = async () => {
+    const myForms = await feathersClient.service('forms')
+      .find();
+    this.forms = myForms.data;
   };
 
 }
