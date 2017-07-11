@@ -5,7 +5,10 @@
 module.exports = function (app) {
   const mongooseClient = app.get('mongooseClient');
   const forms = new mongooseClient.Schema({
-    text: { type: String, required: true },
+    name: { type: String, required: true },
+    fields: { type: Array, required: true },
+    entries: { type: Array },
+    userId: { type: String, required: true },
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now }
   });
