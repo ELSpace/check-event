@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import Header from './Header';
 import Social from './Social';
-import MyForm from './MyForm';
+import MyForm from 'mobx-react-form';
 import Form from './Form';
 import toastr from 'toastr';
 import { inject, observer } from 'mobx-react';
@@ -11,6 +11,7 @@ import { withRouter } from 'react-router-dom';
 import '../style.css';
 import logo from '../../../assets/img/elspacelogo.png';
 import plugins from '../../../common/validator';
+
 const fields = [{
   name: 'email',
   label: 'Email',
