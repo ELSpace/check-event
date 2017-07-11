@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 const ActionsItem = ({title, icon, url}) => (
     <li>
-      <a href={url}>
+      <Link to={url}>
         <i className={icon} /> {title}
-      </a>
+      </Link>
     </li>
 );
 
