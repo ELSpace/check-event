@@ -69,13 +69,6 @@ export default observer(({form}) => (
         <input className="form-control placeholder-no-fix" type="password" {...form.$('password').bind({ type: 'password' })} />
          <span className="help-block"> {form.$('password').error} </span>
          </div>
-      <div className={"form-group " + (form.$('rpassword').hasError ? 'has-error' : '')}>
-        <label className="control-label visible-ie8 visible-ie9" htmlFor={form.$('rpassword').id}>
-         {form.$('rpassword').label}
-         </label>
-        <input className="form-control placeholder-no-fix" type="password" {...form.$('rpassword').bind({ type: 'password' })} />
-         <span className="help-block"> {form.$('rpassword').error} </span>
-         </div>
          
       <div className="form-group margin-top-20 margin-bottom-20">
         <label className="mt-checkbox mt-checkbox-outline">
@@ -90,7 +83,7 @@ export default observer(({form}) => (
         <Link to='/login'>
         <button type="button" id="register-back-btn" className="btn green btn-outline">Back</button>
         </Link>
-        <button type="submit" onClick={form.onSubmit} className="btn btn-success uppercase pull-right">Submit</button>
+        <button type="submit" className="btn btn-success uppercase pull-right">Submit</button>
       </div>
     <p>{form.error}</p>
   </form>
