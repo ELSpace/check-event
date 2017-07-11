@@ -4,13 +4,13 @@ import hooks from 'feathers-hooks';
 import errors from 'feathers-errors'; // An object with all of the custom error types.
 import auth from 'feathers-authentication-client';
 import io from 'socket.io-client/dist/socket.io';
+import rest from 'feathers-rest/client';
+const axios = require('axios'); 
 
-const socket = io('http://localhost:3030', {
-  transports: ['websocket']
-});
+const restClient = rest('http://localhost:3030');
 
 const feathersClient = feathers()
-  .configure(socketio(socket))
+  .configure(restClient.axios(axios)) 
   .configure(hooks())
   .configure(auth({
     header: 'Authorization', // the default authorization header for REST
