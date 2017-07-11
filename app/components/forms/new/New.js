@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Content } from '../../../metronic/layout';
 import {Link} from 'react-router-dom';
-
+import { observer, inject } from 'mobx-react';
 let form;
 
+@inject('store')
+@observer
 class New extends Component {
   componentDidMount() {  
     form = $('#builder').formBuilder({
@@ -11,9 +13,13 @@ class New extends Component {
     });
   }
 
-
+  createForm() {
+    this.props.store.form.create(form.actions.getData());
+  }
 
   render() {
+    this.createForm = this.createForm.bind(this);
+
     return (
       <Content.Item title="New Form" description="create a new form">        
         <div className="portlet light portlet-fit">
@@ -28,7 +34,7 @@ class New extends Component {
               <div className="col-sm-10">
                 <input type="text" className="form-control" placeholder="name" />
                 <br />
-                <button className="btn btn-success">Create</button>
+                <button onClick={this.createForm} className="btn btn-success">Create</button>
               </div>  
             </div>
             <hr />
@@ -43,7 +49,6 @@ class New extends Component {
     );
   }
   
-
 
 }
 
