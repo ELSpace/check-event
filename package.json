@@ -30,6 +30,7 @@
     "build": "webpack"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "block-ui": "^2.70.1",
     "body-parser": "^1.17.2",
     "bootstrap": "^3.3.7",
