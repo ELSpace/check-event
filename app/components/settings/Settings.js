@@ -3,7 +3,7 @@ import { Content } from '../../metronic/layout';
 import pic from '../../assets/img/avatar11.jpg';
 
 const Settings = () => (
-  <Content.Item title="Settings" description="settings">
+  <Content.Item title="Settings" description="settings" crumb="Settings">
     <div className="tabbable-line tabbable-full-width">
         <ul className="nav nav-tabs">
           <li className="active">

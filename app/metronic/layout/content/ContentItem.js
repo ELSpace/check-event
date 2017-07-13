@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ContentItem = ({title , description, children}) => (
+const ContentItem = ({title , description, children,crumb}) => (
   <div className="page-content" style={{minHeight: 1440}}>
     <h1 className="page-title"> {title}
       <small> {description} </small>
@@ -10,11 +10,11 @@ const ContentItem = ({title , description, children}) => (
       <ul className="page-breadcrumb">
         <li>
           <i className="fa fa-home" />
-          <a href="index.html">Home</a>
+          <a href="/">Home</a>
           <i className="fa fa-angle-right" />
         </li>
         <li>
-          <span>Dashboard</span>
+          <span>{crumb}</span>
         </li>
       </ul>
     </div>
@@ -28,7 +28,8 @@ ContentItem.propTypes = {
   children: React.PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
-  ])
+  ]),
+  crumb:PropTypes.string.isRequired
 };
 
  export default ContentItem;
