@@ -1,5 +1,5 @@
 {
-  "host": "app-app.feathersjs.com",
+  "host": "checkevent.herokuapp.com",
   "port": "PORT",
   "mongodb": "MONGODB_URI"
 }
