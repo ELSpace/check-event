@@ -21,3 +21,4 @@ require('block-ui/jquery.blockUI.js');
 require('js-cookie/src/js.cookie.js');
 require('../metronic/theme/js/layout.js');
 require('formBuilder');
+require('formBuilder/dist/form-render.min'); // contains babel-polyfill
