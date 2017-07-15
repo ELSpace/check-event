@@ -27,7 +27,7 @@
     "api:dev": "nodemon src/",
     "web:dev": "webpack-dev-server --open",
     "dev": "concurrently \"npm run api:dev\" \"npm run web:dev\"",
-    "build": "webpack"
+    "build": "webpack -p"
   },
   "dependencies": {
     "axios": "^0.16.2",
