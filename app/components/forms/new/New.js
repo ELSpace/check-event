@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Content } from '../../../metronic/layout';
 import {Link} from 'react-router-dom';
 import { observer, inject } from 'mobx-react';
+import { withRouter } from 'react-router-dom';
 let form;
 
 @inject('store')
@@ -18,6 +19,7 @@ class New extends Component {
 
     if (name === "") alert('enter form name please');
     else this.props.store.form.create(name, form.actions.getData());
+    this.props.history.push('/forms');
   }
 
   render() {
@@ -58,4 +60,4 @@ class New extends Component {
 
 }
 
-export default New;
+export default withRouter(New);
