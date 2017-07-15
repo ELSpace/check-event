@@ -7,7 +7,7 @@ import io from 'socket.io-client/dist/socket.io';
 import rest from 'feathers-rest/client';
 const axios = require('axios'); 
 
-const url = "https://localhost:5000";
+let url = "https://localhost:5000";
 
 if (process.env.NODE_ENV !== 'production')
   url = url.replace('https', 'http');
