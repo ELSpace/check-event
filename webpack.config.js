@@ -16,15 +16,15 @@ module.exports = {
 
   devServer: {
     hot: true,
-    contentBase: path.resolve(__dirname, 'dist'),
+    contentBase: path.resolve(__dirname, 'public'),
     publicPath: '/',
     overlay: true,
     historyApiFallback: true
   },
 
   output: {
-    path: __dirname + '/dist',
-    filename: "index_bundle.js",
+    path: __dirname + '/public',
+    filename: "bundle.js",
     publicPath: '/'
   },
   

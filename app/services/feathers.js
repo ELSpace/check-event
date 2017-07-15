@@ -8,7 +8,7 @@ import rest from 'feathers-rest/client';
 const axios = require('axios'); 
 
 let url = "https://localhost:5000";
-
+console.log(process.env.NODE_ENV);
 if (process.env.NODE_ENV !== 'production')
   url = url.replace('https', 'http');
 
