@@ -38,7 +38,7 @@ class App extends Component {
             <Route path='/register' component={Register} />
             <Route path='/forget' component={Forget} />
             <Route path='/logout' component={Logout} /> 
-            <Route path="/display" component={Display}/>      
+            <Route path="/display/:form" component={Display}/>       
             <PrivateRoute 
               path='/' 
               component={Dashboard} 
