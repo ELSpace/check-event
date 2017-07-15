@@ -14,7 +14,10 @@ class New extends Component {
   }
 
   createForm() {
-    this.props.store.form.create(form.actions.getData());
+    const name = this.refs.formName.value;
+
+    if (name === "") alert('enter form name please');
+    else this.props.store.form.create(name, form.actions.getData());
   }
 
   render() {
@@ -32,7 +35,7 @@ class New extends Component {
             <div className="form-group row">
               <label className="col-sm-2 col-form-label">Form Name</label>
               <div className="col-sm-10">
-                <input type="text" className="form-control" placeholder="name" />
+                <input type="text" className="form-control" placeholder="name" ref="formName"/>
                 <br />
                 <button onClick={this.createForm} className="btn btn-success">Create</button>
               </div>  
