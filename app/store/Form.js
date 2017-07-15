@@ -31,7 +31,7 @@ export default class Form {
 
     this.singleForm = response.data[0];
     
-    if (response.data[0].fields)
+    if (response.data[0])
       return response.data[0].fields;
     else 
       this.getSingle(name);
