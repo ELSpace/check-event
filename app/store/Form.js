@@ -4,14 +4,14 @@ import feathersClient from '../services/feathers';
 export default class Form {
 
   @observable forms = [];
-  @observable singleForm = {};
+  @observable singleForm = null;
 
-  @action.bound create = async data => {
+  @action.bound create = async (name, data) => {
     try {
       const user = await feathersClient.get('user');
       const form = await feathersClient.service('forms').create({
         fields: data,
-        name: 'Hallleluya form',
+        name,
         userId: user._id
       });
       this.forms.push(form);
@@ -22,7 +22,14 @@ export default class Form {
   }
 
   @action.bound getSingle = async name => {
-    //this.singleForm = await feathersClient.service('forms')
+    const response = await feathersClient.service('forms').find({
+      query: {
+        name
+      }
+    });
+
+    this.singleForm = response.data[0];
+    return response.data[0].fields;
   }
 
   @action.bound find = async () => {
@@ -31,4 +38,4 @@ export default class Form {
     this.forms = myForms.data;
   };
 
-}
+} 
