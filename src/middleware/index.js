@@ -7,6 +7,10 @@ module.exports = function () {
   // the error handler have to go last.
   const app = this;
 
+  app.get('*', (req, res) => {
+    res.sendFile('../../public/index.html');
+  });
+
   app.use(notFound());
   app.use(handler());
 };
