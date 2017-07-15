@@ -15,6 +15,7 @@ export default class Form {
         userId: user._id
       });
       this.forms.push(form);
+      return;
     } catch(e) {
       console.log(e);
       console.log(e.response);

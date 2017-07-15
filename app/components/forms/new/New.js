@@ -18,8 +18,10 @@ class New extends Component {
     const name = this.refs.formName.value;
 
     if (name === "") alert('enter form name please');
-    else this.props.store.form.create(name, form.actions.getData());
-    this.props.history.push('/forms');
+    else this.props.store.form.create(name, form.actions.getData())
+      .then(() => {
+        this.props.history.push('/forms');
+      });    
   }
 
   render() {
