@@ -7,7 +7,12 @@ import io from 'socket.io-client/dist/socket.io';
 import rest from 'feathers-rest/client';
 const axios = require('axios'); 
 
-const restClient = rest('http://localhost:5000');
+const url = "https://localhost:5000";
+
+if (process.env.NODE_ENV !== 'production')
+  url = url.replace('https', 'http');
+
+const restClient = rest(url);
 
 const feathersClient = feathers()
   .configure(restClient.axios(axios)) 
