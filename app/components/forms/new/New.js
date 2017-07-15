@@ -38,7 +38,10 @@ class New extends Component {
                 <input type="text" className="form-control" placeholder="name" ref="formName"/>
                 <br />
                 <button onClick={this.createForm} className="btn btn-success">Create</button>
-              </div>  
+                <Link to='/forms'>
+                <button  className="btn btn-info">Display Forms Table</button>
+                </Link>
+            </div>  
             </div>
             <hr />
             <div className="row">
