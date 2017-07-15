@@ -8,11 +8,8 @@ import rest from 'feathers-rest/client';
 const axios = require('axios'); 
 
 let url = "https://checkevent.herokuapp.com";
+//let url = "http://localhost:5000";
 
-if (process.env.NODE_ENV !== 'production') {
-  url = url.replace('https', 'http');
-  url = url.replace('localhost:5000', 'checkevent.herokuapp.com');
-}
 
 const restClient = rest(url);
 
