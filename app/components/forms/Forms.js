@@ -13,7 +13,7 @@ export default class Forms extends React.Component {
 
   render() {
     return (
-      <Content.Item title="My FOrms" description="forms" crumb="Forms">
+      <Content.Item title="My Forms" description=" , Display Created Forms" crumb="Forms">
         <div className="portlet light portlet-fit ">
           <div className="portlet-title">
             <div className="caption">
@@ -21,13 +21,12 @@ export default class Forms extends React.Component {
               <span className="caption-subject font-red sbold uppercase">My Forms</span>
             </div>
             <div className="actions">
-              <div className="btn-group btn-group-devided" data-toggle="buttons">
-                <Link to='/forms/new' className="btn btn-transparent blue btn-outline btn-circle btn-sm">
-                  <i className="fa fa-plus" /> Create Form
+                <Link to='/forms/new'> 
+                  <button className='btn btn-primary'>Create a New Form</button> 
                 </Link>
               </div>
             </div>
-          </div>
+         
           <div className="portlet-body">
             <div className="table-scrollable">
             <table className="table table-striped table-hover table-bordered dataTable no-footer" id="sample_editable_1" role="grid" aria-describedby="sample_editable_1_info" style={{width: 1602}}>
@@ -47,10 +46,14 @@ export default class Forms extends React.Component {
                   <tbody>
                     {this.props.store.form.forms.map(form => 
                       <tr key={form._id} role="row" className="odd">
-                        <td className="sorting_1">{form.name}</td>
+                        <td className="sorting_1"><Link to={'/display/'+form.name} target='_blank'>
+                        {form.name} 
+                        </Link>
+                        </td>
                         <td>{form.entries.length}</td>
                         <td>{form.createdAt}</td>
                       </tr>  
+                    
                     )}
                     
                   </tbody>
