@@ -17,12 +17,12 @@ import Store from './store';
 import './assets';
 
 // Importing main components
-import Dashboard from './components/dashboard/Dashboard';
-import Register from './components/user/register/Register';
 import Login from './components/user/login/Login';
-import Forget from './components/user/forgetpassword/Forget';
-import Logout from './components/user/logout/logout';
-import Display from './components/forms/display/Display';
+// import Dashboard from './components/dashboard/Dashboard';
+// import Register from './components/user/register/Register';
+// import Forget from './components/user/forgetpassword/Forget';
+// import Logout from './components/user/logout/logout';
+// import Display from './components/forms/display/Display';
 
 
 const store = new Store();
@@ -35,7 +35,7 @@ class App extends Component {
         <Router>
           <Switch>
             <Route path='/login' component={Login} />
-            <Route path='/register' component={Register} />
+            {/*<Route path='/register' component={Register} />
             <Route path='/forget' component={Forget} />
             <Route path='/logout' component={Logout} /> 
             <Route path="/display/:form" component={Display}/>       
@@ -44,7 +44,7 @@ class App extends Component {
               component={Dashboard} 
               isAuthenticated={store.user.isLoggedIn}
               redirectTo='/login'
-            />
+            />*/}
           </Switch>
         </Router>    
       </Provider>

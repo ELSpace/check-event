@@ -1,57 +1,49 @@
 import React from 'react';
-import classNames from 'classnames';
-import { Button } from '../../../metronic/lib/ui';
+import classNameNames from 'classnames';
 import { Link } from 'react-router-dom';
 import { observer } from 'mobx-react';
-
-
-
+import { Button, Form, FormGroup, Label, Input, FormFeedback } from 'reactstrap';
 
 export default observer(({form}) => (
-  <form onSubmit={form.onSubmit} className="login-form" noValidate="novalidate">    
-    <h3 className="form-title font-green">LOGIN</h3>
-      <div className="alert alert-danger display-hide">
-      <button className="close" data-close="alert" />
-      <span> Enter your Email and password. </span>
+  <form onSubmit={form.onSubmit} noValidate="novalidate">
+
+    <div className={"form-group " + (form.$('email').hasError ? 'has-danger' : '')}>
+      <div className="controls">
+        <div className="input-prepend input-group">
+          <span className="input-group-addon"><i className="fa fa-user"></i></span>
+          <input 
+            className="form-control" 
+            size="50"
+            {...form.$('email').bind()} 
+          />
+        </div>
+        <p className="help-block">{form.$('email').error}</p>
+      </div>
     </div>
 
-    <div className={"form-group " + (form.$('email').hasError ? 'has-error' : '')}>
-      <label className="control-label visible-ie8 visible-ie9" htmlFor={form.$('email').id}>
-        {form.$('email').label}
-      </label>
-      <input 
-        className="form-control form-control-solid placeholder-no-fix" 
-        type="text"
-        {...form.$('email').bind()}
-      />
-      <span className="help-block"> {form.$('email').error} </span>
-
+    <div className={"form-group " + (form.$('password').hasError ? 'has-danger' : '')}>
+      <div className="controls">
+        <div className="input-prepend input-group">
+          <span className="input-group-addon"><i className="fa fa-lock"></i></span>
+          <input 
+            className="form-control" 
+            size="50"
+            {...form.$('password').bind({type: 'password'})}
+          />
+        </div>
+        <p className="help-block">{form.$('password').error}</p>
+      </div>
     </div>
 
-    <div className={"form-group " + (form.$('password').hasError ? 'has-error' : '')}>
-      <label className="control-label visible-ie8 visible-ie9" htmlFor={form.$('password').id}>
-        {form.$('password').label}
-      </label>
-      <input 
-        className="form-control form-control-solid placeholder-no-fix" 
-        type="password" 
-        {...form.$('password').bind({ type: 'password' })}
-      /> 
 
-      <span className="help-block"> {form.$('password').error} </span>
+    <div className="row">
+      <div className="col-6">
+        <button type="submit" className="btn btn-primary px-4">Login</button>
+      </div>
+      <div className="col-6 text-right">
+        <button type="button" className="btn btn-link px-0">Forgot password?</button>
+      </div>
     </div>
-    
-    <div className="form-actions">
-      <Button text="Login" color="green"/>
-      <label className="rememberme check mt-checkbox mt-checkbox-outline">
-        <input type="checkbox" name="remember" defaultValue={1} />Remember    
-        <span />
-      </label>
-      <Link to='/forget' className="forget-password">
-        Forgot Password?
-      </Link>
 
-    </div>
-          
   </form>
 ));
