@@ -4,11 +4,11 @@ import Form from './Form';
 import MyForm from 'mobx-react-form';
 import fields from './validation';
 import plugins from '../../../common/validator';
-import '../style.css';
 import logo from '../../../assets/img/elspacelogo.png'
 import { observer, inject } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
 import toastr from 'toastr';
+
 
 let instance;
 
@@ -50,7 +50,7 @@ class Register extends React.Component {
     return(
       <div>
         <div className="content">
-          <Header src={logo} />
+         {/* <Header src={logo} /> */}
           <Form form={instance}/>                  
         </div>
       </div>
