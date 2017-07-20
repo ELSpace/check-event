@@ -19,8 +19,7 @@ import './assets';
 // Importing main components
 import Login from './components/user/login/Login';
 import Register from './components/user/register/Register';
-
-// import Dashboard from './components/dashboard/Dashboard';
+import Dashboard from './components/dashboard/Dashboard';
 // import Forget from './components/user/forgetpassword/Forget';
 // import Logout from './components/user/logout/logout';
 // import Display from './components/forms/display/Display';
@@ -37,6 +36,8 @@ class App extends Component {
           <Switch>
             <Route path='/login' component={Login} />
             <Route path='/register' component={Register}/>
+            <Route path='/dashboard' component={Dashboard}/>
+
             {/*<Route path='/register' component={Register} />
             <Route path='/forget' component={Forget} />
             <Route path='/logout' component={Logout} /> 
