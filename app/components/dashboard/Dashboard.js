@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import { observer, inject } from 'mobx-react';
-import { Header, Sidebar, Content } from '../../metronic/layout';
+import  Header from '../../ui/Header/Header';
+import  Sidebar from '../../ui/Sidebar/Sidebar';
+
 
 // components
-import Main from '../main/Main';
-import Forms from '../forms/Forms';
-import Settings from '../settings/Settings';
-import New from '../forms/new/New';
+//import Main from '../main/Main';
+//import Forms from '../forms/Forms';
+//import Settings from '../settings/Settings';
+//import New from '../forms/new/New';
 
 // assets
-import logo from '../../assets/img/logo.png';
-import pic from '../../assets/img/avatar11.jpg';
+//import logo from '../../assets/img/logo.png';
+//import pic from '../../assets/img/avatar11.jpg';
 
-import { routes, actions, profileItems } from '../../common';
+//import { routes, actions, profileItems } from '../../common';
 
 @inject('store')
 @observer
@@ -27,8 +29,9 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
-        <Header logo={logo} >
-          <Header.Actions actions={actions} />
+        <Header />
+        
+         {/*    <Header.Actions actions={actions} />
           <Header.PageWrapper>
             <Header.SearchForm placeholder="Search..." />
             <Header.TopMenuWrapper>
@@ -37,7 +40,6 @@ class Dashboard extends Component {
                 badge="4"
                 title="You have 4 notification"
               >
-              {/* TODO create drop down menu items */}
               </Header.DropdownMenu>
               <Header.Profile name={this.props.store.user.user && this.props.store.user.user.fullname} pic={pic} items={profileItems}/>       
             </Header.TopMenuWrapper> 
@@ -53,7 +55,7 @@ class Dashboard extends Component {
             <Route path='/settings' component={Settings}/>
           </Content>
         </div>
-      
+      */}
       </div>
     );
   }
