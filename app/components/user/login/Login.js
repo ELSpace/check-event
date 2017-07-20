@@ -29,7 +29,7 @@ let instance;
 class Login extends Component {
 
   componentWillMount(){
-    window.$('body').attr('class', '');    
+    //window.$('body').attr('class', '');    
     const { user } = this.props.store;
     const self = this;
     

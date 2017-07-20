@@ -1,38 +1,47 @@
 import React from 'react';
-import classNameNames from 'classnames';
+import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import { observer } from 'mobx-react';
-import { Button, Form, FormGroup, Label, Input, FormFeedback } from 'reactstrap';
 
-export default observer(({form}) => (
-  <form onSubmit={form.onSubmit} noValidate="novalidate">
+export default observer(({form}) => {
+  const checkErrClass = name => {
+    return classNames({
+      'has-danger': form.$(name).error
+    }, 'input-group', 'mb-3');
+  }
 
-    <div className={"form-group " + (form.$('email').hasError ? 'has-danger' : '')}>
-      <div className="controls">
-        <div className="input-prepend input-group">
-          <span className="input-group-addon"><i className="fa fa-user"></i></span>
-          <input 
-            className="form-control" 
-            size="50"
-            {...form.$('email').bind()} 
-          />
-        </div>
-        <p className="help-block">{form.$('email').error}</p>
+  const checkInputErrClass = name => {
+    return classNames({
+      'form-control-danger': form.$(name).error
+    }, 'form-control ');
+  }
+
+  return <form onSubmit={form.onSubmit} noValidate="novalidate">
+
+    <div className="form-group">
+      <div className={checkErrClass('email')}>
+        <span className="input-group-addon">
+          <i className="icon-envelope"></i>
+        </span>
+        <input 
+          className={checkInputErrClass('email')} 
+          {...form.$('email').bind()}
+        />      
       </div>
+      <span className="help-block"> {form.$('email').error} </span>
     </div>
 
-    <div className={"form-group " + (form.$('password').hasError ? 'has-danger' : '')}>
-      <div className="controls">
-        <div className="input-prepend input-group">
-          <span className="input-group-addon"><i className="fa fa-lock"></i></span>
-          <input 
-            className="form-control" 
-            size="50"
-            {...form.$('password').bind({type: 'password'})}
-          />
-        </div>
-        <p className="help-block">{form.$('password').error}</p>
+    <div className="form-group">
+      <div className={checkErrClass('password')}>
+        <span className="input-group-addon">
+          <i className="icon-lock"></i>
+        </span>
+        <input 
+          className={checkInputErrClass('password')} 
+          {...form.$('password').bind({type: 'password'})}
+        />      
       </div>
+      <span className="help-block"> {form.$('password').error} </span>
     </div>
 
 
@@ -46,4 +55,4 @@ export default observer(({form}) => (
     </div>
 
   </form>
-));
+});

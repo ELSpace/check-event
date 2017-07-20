@@ -2,9 +2,10 @@
 
 import 'toastr/build/toastr.css';
 
- 
-import './styles/style.css'; 
+import './css/simple-line-icons.css';
+import './css/font-awesome.css';
+import './css/style.css'; 
 
 // JS  
-require('formBuilder');
-require('formBuilder/dist/form-render.min'); // contains babel-polyfill
+//require('formBuilder');
+//require('formBuilder/dist/form-render.min'); // contains babel-polyfill

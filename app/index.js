@@ -58,7 +58,7 @@ store.user.checkAuthState()
   .then(() => {
     render(
       <App />,
-      document.getElementById('app')
+      document.getElementById('root')
     );
   });
 

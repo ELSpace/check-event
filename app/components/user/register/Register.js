@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../login/Header';
 import Form from './Form';
 import MyForm from 'mobx-react-form';
 import fields from './validation';
@@ -9,6 +8,7 @@ import { observer, inject } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
 import toastr from 'toastr';
 
+import Header from './Header';
 
 let instance;
 
@@ -16,21 +16,21 @@ let instance;
 @observer
 class Register extends React.Component {
   
-  componentWillMount(){
-    window.$('body').attr('class', 'login' );
-  
+  componentWillMount() {
     const { user } = this.props.store;
     const self = this;
     
     const onSubmit = {
       onSuccess(form) {
         const values = form.values();
+        console.log(values);
         user.register(values)
           .then(() => {
             toastr.success(`Account created! welcome ${values.fullname}`);
             self.props.history.push('/');
           })
           .catch(e => {
+            console.log(e);
             toastr.error(e.message);
           }); 
       },
@@ -48,10 +48,18 @@ class Register extends React.Component {
 
   render() { 
     return(
-      <div>
-        <div className="content">
-         {/* <Header src={logo} /> */}
-          <Form form={instance}/>                  
+      <div className="app flex-row align-items-center">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-md-6">
+              <div className="card mx-4">
+                <div className="card-block p-4">
+                  <Header />
+                  <Form form={instance}/>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     )

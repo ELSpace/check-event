@@ -19,9 +19,15 @@ export default [{
   placeholder:'Address',
   rules:'required|string|between:10,40',
 },{
-  name:'phone',
-  label:'Phone Number',
-  placeholder:'Phone Number',
+  name:'city',
+  label:'City/Town',
+  placeholder:'City/Town',
+  rules:'required|string|between:2,40',
+},{
+  name:'country',
+  label:'Country',
+  placeholder:'Country',
   rules:'required', 
 }];
+
 

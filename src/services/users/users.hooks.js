@@ -15,12 +15,12 @@ const restrict = [
 ];
 
 const schema = {
-  email: Joi.string().email().required(),
-  password: Joi.string().min(8).max(32).required(),
   fullname: Joi.string().trim().min(5).max(30).required(),
   address: Joi.string().required(),
   city: Joi.string().required(),
-  country: Joi.string().required()
+  country: Joi.string().required(),
+  email: Joi.string().email().required(),
+  password: Joi.string().min(8).max(32).required(),
 };
 
 const joiOptions = { convert: true, abortEarly: false };
