@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import { observer, inject } from 'mobx-react';
-import  Header from '../../ui/Header/Header';
-import  Sidebar from '../../ui/Sidebar/Sidebar';
-
+import Header from '../../ui/Header/Header';
+import Sidebar from '../../ui/Sidebar/Sidebar';
 
 // components
 //import Main from '../main/Main';
@@ -15,22 +14,23 @@ import  Sidebar from '../../ui/Sidebar/Sidebar';
 //import logo from '../../assets/img/logo.png';
 //import pic from '../../assets/img/avatar11.jpg';
 
-//import { routes, actions, profileItems } from '../../common';
+import { routes, actions, profileItems } from '../../common';
 
 @inject('store')
 @observer
 class Dashboard extends Component {
   
   componentWillMount() {
-    window.$('body').attr('class', 'page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-md');
     this.props.store.user.profile();
   }
   
   render() {
     return (
-      <div>
+      <div className="app">
         <Header />
-        
+        <div className="app-body">
+          <Sidebar {...this.props}/>
+        </div>
          {/*    <Header.Actions actions={actions} />
           <Header.PageWrapper>
             <Header.SearchForm placeholder="Search..." />

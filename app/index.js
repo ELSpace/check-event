@@ -21,7 +21,7 @@ import Login from './components/user/login/Login';
 import Register from './components/user/register/Register';
 import Dashboard from './components/dashboard/Dashboard';
 // import Forget from './components/user/forgetpassword/Forget';
-// import Logout from './components/user/logout/logout';
+import Logout from './components/user/logout/logout';
 // import Display from './components/forms/display/Display';
 
 
@@ -35,19 +35,18 @@ class App extends Component {
         <Router>
           <Switch>
             <Route path='/login' component={Login} />
-            <Route path='/register' component={Register}/>
-            <Route path='/dashboard' component={Dashboard}/>
+            <Route path='/logout' component={Logout} />
+            <Route path='/register' component={Register}/>            
 
-            {/*<Route path='/register' component={Register} />
-            <Route path='/forget' component={Forget} />
-            <Route path='/logout' component={Logout} /> 
-            <Route path="/display/:form" component={Display}/>       
+            {/* />
+            <Route path='/forget' component={Forget} />            
+            <Route path="/display/:form" component={Display}/>*/}
             <PrivateRoute 
               path='/' 
               component={Dashboard} 
               isAuthenticated={store.user.isLoggedIn}
               redirectTo='/login'
-            />*/}
+            />
           </Switch>
         </Router>    
       </Provider>
