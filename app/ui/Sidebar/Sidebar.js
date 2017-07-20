@@ -17,13 +17,16 @@ class Sidebar extends Component {
       <div className="sidebar">
         <nav className="sidebar-nav">
           <ul className="nav">
+            <li className="nav-title">
+              Dashboard
+            </li>
             <li className={this.activeRoute("/")}>
               <NavLink 
                 to={'/'} 
                 className="nav-link" 
                 activeClassName="active"
               >
-                <i className="icon-speedometer"></i> Dashboard
+                <i className="icon-home"></i> Home
               </NavLink>
             </li>            
             <li className={this.activeRoute("/forms")}>
