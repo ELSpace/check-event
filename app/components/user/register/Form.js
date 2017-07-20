@@ -15,50 +15,56 @@ export default observer(({form}) => (
             <h1>Register</h1>
             <p className="text-muted">Create your account</p>
           <form onSubmit={form.onSubmit}>
-            <div className={"input-group mb-1" + (form.$('fullname').hasError ? 'has-error' : '')}>
-              
-                <label className="control-label visible-ie8 visible-ie9" htmlFor={form.$('fullname').id}>
+            <div className={"form-group" + (form.$('fullname').hasError ? 'has-error' : '')}>
+               <label className="control-label visible-ie8 visible-ie9" htmlFor={form.$('fullname').id}>
                 </label>
+                <div className="input-prepend input-group">
                 <span className="input-group-addon">
                 <i className="fa fa-user-circle" /></span>
                 <input type="text" className="form-control"  {...form.$('fullname').bind()}/>
+                </div>
                 <span className="help-block"> {form.$('fullname').error} </span>
                 </div>
-
-                <div className={"input-group mb-1" + (form.$('address').hasError ? 'has-error' : '')}>
+                <div className={"form-group" + (form.$('address').hasError ? 'has-error' : '')}>
+                 <div className="input-prepend input-group">
                  <span className="input-group-addon">
                   <i className="fa fa-map-marker"/> </span>             
                  <label className="control-label visible-ie8 visible-ie9" htmlFor={form.$('address').id}>
                  </label>
                   <input type="text" className="form-control" placeholder="Adress" {...form.$('address').bind()} />
+                  </div>
                   <span className="help-block"> {form.$('address').error} </span>
                   </div>
-
-                  <div className={"input-group mb-1" + + (form.$('phone').hasError ? 'has-error' : '')}>
+                  <div className={"form-group" + + (form.$('phone').hasError ? 'has-error' : '')}>
+                 <div className="input-prepend input-group">
                  <span className="input-group-addon">
                    <i className="fa fa-phone-square"/>
                  </span>
                   <label className="control-label visible-ie8 visible-ie9" htmlFor={form.$('phone').id}>
                    </label>
                   <input type="number" className="form-control" placeholder="Phone Number" {...form.$('phone').bind()} />
+                  </div>
                   <span className="help-block"> {form.$('phone').error} </span>
                   </div>
-               
-                <div className={"input-group mb-1"  + (form.$('email').hasError ? 'has-error' : '')}>
+                 <div className={"form-group"  + (form.$('email').hasError ? 'has-error' : '')}>               
+                  <label className="control-label visible-ie8 visible-ie9" htmlFor={form.$('email').id}>
+                  </label>
+                   <div className="input-prepend input-group">
                   <span className="input-group-addon">
                     <i className="fa fa-envelope"/>
                   </span>
-                  <label className="control-label visible-ie8 visible-ie9" htmlFor={form.$('email').id}>
-                  </label>
                   <input type="text" className="form-control" placeholder="Email" {...form.$('email').bind()} />
+                  </div>
                   <span className="help-block"> {form.$('email').error} </span>
-                  </div>                 
-                  <div className={"input-group mb-1"+(form.$('password').hasError ? 'has-error' : '')}>
+                  </div>
+                  <div className={"form-group"+(form.$('password').hasError ? 'has-error' : '')}>
+                  <div className="input-prepend input-group">
                    <span className="input-group-addon">
                     <i className="fa fa-key" /></span>
                   <label className="control-label visible-ie8 visible-ie9" htmlFor={form.$('password').id}>
                   </label>                  
                       <input type="password" className="form-control" placeholder="Password" {...form.$('password').bind({ type: 'password' })} />
+                      </div>
                        <span className="help-block"> {form.$('password').error} </span>
                       </div>
                         <button type="submit" onClick={form.onSubmit} className="btn btn-block btn-success">Create Account</button>
