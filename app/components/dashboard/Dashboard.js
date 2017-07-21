@@ -31,13 +31,14 @@ class Dashboard extends Component {
       <div className="app">
         <Header />
         <div className="app-body">
-          <Sidebar {...this.props}/>
+          
           <div className="container">
 
           <Route exact path='/forms' component={Forms}/>
           <Route path='/forms/new' component={New}/>
           <Route path='/settings' component={Settings}/>
           </div>
+          <Sidebar {...this.props}/>
           </div>
          {/*    <Header.Actions actions={actions} />
           <Header.PageWrapper>
