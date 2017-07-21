@@ -68,7 +68,7 @@ class Header extends Component {
         <ul className="nav navbar-nav ml-auto">
           <li className="nav-item d-md-down-none">
             <a className="nav-link" href="#">
-              <i className="icon-bell"></i>
+              <i className="fa fa-bell"></i>
               <span className="badge badge-pill badge-danger">5</span>
             </a>
           </li>

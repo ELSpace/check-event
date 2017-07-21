@@ -26,7 +26,7 @@ class Sidebar extends Component {
                 className="nav-link" 
                 activeClassName="active"
               >
-                <i className="icon-home"></i> Home
+                <i className="fa fa-home"></i> Home
               </NavLink>
             </li>            
             <li className={this.activeRoute("/forms")}>
@@ -35,7 +35,7 @@ class Sidebar extends Component {
                 className="nav-link" 
                 activeClassName="active"
               >
-                <i className="icon-doc"></i> Forms
+                <i className="fa fa-wpforms"></i> Forms
               </NavLink>
             </li>
             <li className={this.activeRoute("/settings")}>
@@ -44,7 +44,7 @@ class Sidebar extends Component {
                 className="nav-link" 
                 activeClassName="active"
               >
-                <i className="icon-settings"></i> Settings
+                <i className="fa fa-cog"></i> Settings
               </NavLink>
             </li>
           </ul>
