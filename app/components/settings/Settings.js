@@ -1,9 +1,7 @@
 import React from 'react';
-import { Content } from '../../metronic/layout';
-import pic from '../../assets/img/avatar11.jpg';
 
 const Settings = () => (
-  <Content.Item title="Settings" description=" , User Settings" crumb="Settings">
+    <div className="app-body">
     <div className="tabbable-line tabbable-full-width">
         <ul className="nav nav-tabs">
           <li className="active">
@@ -19,7 +17,7 @@ const Settings = () => (
               <div className="col-md-3">
                 <ul className="list-unstyled profile-nav">
                   <li>
-                    <img src={pic} className="img-responsive pic-bordered" alt />
+                  {/* <img src={pic} className="img-responsive pic-bordered" alt /> */}
                     <a href="javascript:;" className="profile-edit"> Edit </a>
                   </li>                 
                 </ul>
@@ -226,7 +224,6 @@ const Settings = () => (
           </div>
           </div>
           </div>
-
-  </Content.Item>
+</div>
     );
 export default Settings;

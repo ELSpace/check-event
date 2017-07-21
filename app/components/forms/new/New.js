@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Content } from '../../../metronic/layout';
 import {Link} from 'react-router-dom';
 import { observer, inject } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
@@ -28,7 +27,7 @@ class New extends Component {
     this.createForm = this.createForm.bind(this);
 
     return (
-      <Content.Item title="New Form" description="create a new form">        
+              
         <div className="portlet light portlet-fit">
           <div className="portlet-title">
             <div className="caption">
@@ -55,7 +54,7 @@ class New extends Component {
             </div>
           </div>
         </div>
-      </Content.Item>
+  
     );
   }
   
