@@ -27,14 +27,11 @@ class New extends Component {
     this.createForm = this.createForm.bind(this);
 
     return (
-              
-        <div className="portlet light portlet-fit">
-          <div className="portlet-title">
-            <div className="caption">
-              <span className="caption-subject font-red sbold uppercase">New Form</span>
-            </div>
-          </div>
-          <div className="portlet-body">
+
+        <div className="container-fluid">             
+          <div className="caption">
+             <span className="caption-subject font-red sbold uppercase">New Form</span>
+           </div>   
             <div className="form-group row">
               <label className="col-sm-2 col-form-label">Form Name</label>
               <div className="col-sm-10">
@@ -45,20 +42,17 @@ class New extends Component {
                 <button  className="btn btn-info">Display Forms Table</button>
                 </Link>
             </div>  
-            </div>
-            <hr />
-            <div className="row">
-              <div className="col-sm-6 col-md-offset-3">
+            </div> 
+               <hr/>
+               <div className="row"> 
+               <div className="col-md-12 col-md-offset-3">
                 <div id="builder"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+                  </div>
+                     </div>
+                      </div>
   
     );
   }
-  
-
 }
 
 export default withRouter(New);

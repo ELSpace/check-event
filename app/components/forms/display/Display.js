@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Content } from '../../../metronic/layout';
 import { observer, inject } from 'mobx-react';
 
 @inject('store')
