@@ -4,9 +4,12 @@ import { Link } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
 import MyForm from 'mobx-react-form';
+import logo from '../../../assets/img/avatars/elspacelogo.png'
+
 
 import Header from './Header';
 import Form from './Form';
+
 
 import plugins from '../../../common/validator';
 
@@ -23,6 +26,7 @@ const fields = [{
 }];
 
 let instance;
+
 
 @inject('store')
 @observer
@@ -73,8 +77,9 @@ class Login extends Component {
                   <div className="card card-inverse card-primary py-5 d-md-down-none" style={{ width: 44 + '%' }}>
                     <div className="card-block text-center">
                       <div>
+                        <img src={logo} className="img-fluid " alt="admin@bootstrapmaster.com"/>
                         <h2>Sign up</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>El Space Forms is a tool that lets you manage your events by creating custom forms and publish them anywhere you want ,  More importantly  it's an OPEN SOURCE tool for devs who want to play around and improve it ;)</p>
                         <Link to="/register"><button type="button" className="btn btn-primary active mt-3">Register Now!</button></Link>
                       </div>
                     </div>
