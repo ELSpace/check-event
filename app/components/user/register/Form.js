@@ -104,6 +104,11 @@ export default observer(({form}) => {
     </div>
 
     <button type="submit" className="btn btn-block btn-success">Create Account</button>
+     <br/>
+        <Link to='/login'>
+        <button type="button" className="btn btn-block btn-info">Back To Login</button>
+        </Link>
+
   </form>
 
 });
