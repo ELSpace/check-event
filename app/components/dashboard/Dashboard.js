@@ -3,12 +3,14 @@ import { Route } from 'react-router-dom';
 import { observer, inject } from 'mobx-react';
 import Header from '../../ui/Header/Header';
 import Sidebar from '../../ui/Sidebar/Sidebar';
+//import Breadcrumb from '../../ui/Breadcrumb/Breadcrumb'
+import {Main} from 'reactstrap';
 
 // components
 //import Main from '../main/Main';
-//import Forms from '../forms/Forms';
-//import Settings from '../settings/Settings';
-//import New from '../forms/new/New';
+import Forms from '../forms/Forms';
+import Settings from '../settings/Settings';
+import New from '../forms/new/New';
 
 // assets
 //import logo from '../../assets/img/logo.png';
@@ -30,7 +32,13 @@ class Dashboard extends Component {
         <Header />
         <div className="app-body">
           <Sidebar {...this.props}/>
-        </div>
+          <div className="container">
+
+          <Route exact path='/forms' component={Forms}/>
+          <Route path='/forms/new' component={New}/>
+          <Route path='/settings' component={Settings}/>
+          </div>
+          </div>
          {/*    <Header.Actions actions={actions} />
           <Header.PageWrapper>
             <Header.SearchForm placeholder="Search..." />
@@ -52,7 +60,6 @@ class Dashboard extends Component {
             <Route exact path='/' component={Main} />
             <Route exact path='/forms' component={Forms}/>
             <Route path='/forms/new' component={New}/>
-            <Route path='/settings' component={Settings}/>
           </Content>
         </div>
       */}

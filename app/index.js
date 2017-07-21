@@ -44,7 +44,7 @@ class App extends Component {
             <PrivateRoute 
               path='/' 
               component={Dashboard} 
-              isAuthenticated={store.user.isLoggedIn}
+              isAuthenticated={store.user.isLoggedIn}           
               redirectTo='/login'
             />
           </Switch>
