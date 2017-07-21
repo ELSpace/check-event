@@ -22,7 +22,7 @@ import Register from './components/user/register/Register';
 import Dashboard from './components/dashboard/Dashboard';
 // import Forget from './components/user/forgetpassword/Forget';
 import Logout from './components/user/logout/logout';
-// import Display from './components/forms/display/Display';
+import Display from './components/forms/display/Display';
 
 
 const store = new Store();
@@ -36,11 +36,12 @@ class App extends Component {
           <Switch>
             <Route path='/login' component={Login} />
             <Route path='/logout' component={Logout} />
-            <Route path='/register' component={Register}/>            
-
+            <Route path='/register' component={Register}/>   
+            <Route path="/display/:form" component={Display}/>         
+ 
             {/* />
             <Route path='/forget' component={Forget} />            
-            <Route path="/display/:form" component={Display}/>*/}
+            */}
             <PrivateRoute 
               path='/' 
               component={Dashboard} 
