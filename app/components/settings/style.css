@@ -1,0 +1,22 @@
+.settings .nav {
+  border-right: 1px solid #eee;
+  padding: 5px;
+}
+
+.settings .nav a {
+  width: 100%;
+  font-weight: bold;
+  padding: 15px 0 15px 15px;
+}
+
+.settings .nav a:link {  
+  color: #877eec;
+}
+
+.settings .nav a:visited {  
+  color: #877eec;
+}
+
+.settings .nav a:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
