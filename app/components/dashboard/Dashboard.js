@@ -35,6 +35,7 @@ class Dashboard extends Component {
           <Sidebar {...this.props}/>
           <div className="main">
             <Breadcrumb />
+            <Route path='/home' component={() => <h1>Home</h1>}/>
             <Route exact path='/forms' component={Forms}/>
             <Route path='/forms/new' component={New}/>
             <Route path='/settings' component={Settings}/>
