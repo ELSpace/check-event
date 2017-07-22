@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import { observer, inject } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
+import { Card, CardTitle, CardSubtitle, CardBlock } from 'reactstrap';
+
 let form;
 
 @inject('store')
@@ -27,30 +29,32 @@ class New extends Component {
     this.createForm = this.createForm.bind(this);
 
     return (
-
-        <div className="container-fluid">             
-          <div className="caption">
-             <span className="caption-subject font-red sbold uppercase">New Form</span>
-           </div>   
-            <div className="form-group row">
-              <label className="col-sm-2 col-form-label">Form Name</label>
-              <div className="col-sm-10">
-                <input type="text" className="form-control" placeholder="name" ref="formName"/>
-                <br />
+      <div className="container-fluid">
+        <Card>
+          <CardBlock>
+            <CardTitle>New Form</CardTitle>           
+            <hr/>
+            <div className="row">
+              <div className="col-md-1">
+                <label>Form Name</label>
+              </div>
+              <div className="col-md-10">
+                <input 
+                  type="text" 
+                  className="form-control" 
+                  placeholder="name" 
+                  ref="formName"
+                />
+              </div>
+              <div className="col-md-1">
                 <button onClick={this.createForm} className="btn btn-success">Create</button>
-                <Link to='/forms'>
-                <button  className="btn btn-info">Display Forms Table</button>
-                </Link>
-            </div>  
-            </div> 
-               <hr/>
-               <div className="row"> 
-               <div className="col-md-12 col-md-offset-3">
-                <div id="builder"></div>
-                  </div>
-                     </div>
-                      </div>
-  
+              </div>
+            </div>
+            <br />
+            <div id="builder"></div>
+          </CardBlock>
+        </Card>
+      </div>
     );
   }
 }
