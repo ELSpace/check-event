@@ -15,6 +15,7 @@ import Store from './store';
 
 // load project assets
 import './assets';
+import './style.css';
 
 // Importing main components
 import Login from './components/user/login/Login';
