@@ -7,8 +7,10 @@ import io from 'socket.io-client/dist/socket.io';
 import rest from 'feathers-rest/client';
 const axios = require('axios'); 
 
-//let url = "https://checkevent.herokuapp.com";
-let url = "http://localhost:5000";
+let url = "https://checkevent.herokuapp.com";
+
+if (process.env.NODE_ENV !== "production")
+  url = "http://localhost:5000";
 
 
 const restClient = rest(url);
