@@ -18,14 +18,15 @@ export default observer(({form}) => {
 
   return <form onSubmit={form.onSubmit} noValidate="novalidate">
 
-    <div className="form-group">
+    <div className="form-group" >
       <div className={checkErrClass('email')}>
         <span className="input-group-addon">
-          <i className="icon-envelope"></i>
+          <i className="fa fa-user"></i>
         </span>
         <input 
           className={checkInputErrClass('email')} 
           {...form.$('email').bind()}
+           size="50"
         />      
       </div>
       <span className="help-block"> {form.$('email').error} </span>
@@ -34,11 +35,12 @@ export default observer(({form}) => {
     <div className="form-group">
       <div className={checkErrClass('password')}>
         <span className="input-group-addon">
-          <i className="icon-lock"></i>
+          <i className="fa fa-lock"></i>
         </span>
         <input 
           className={checkInputErrClass('password')} 
           {...form.$('password').bind({type: 'password'})}
+          size="50"
         />      
       </div>
       <span className="help-block"> {form.$('password').error} </span>
