@@ -24,11 +24,12 @@ export default observer(({form}) => {
     <div className="form-group">
       <div className={checkErrClass('email')}>
         <span className="input-group-addon">
-          <i className="icon-envelope"></i>
+          <i className="fa fa-envelope"></i>
         </span>
         <input 
           className={checkInputErrClass('email')} 
           {...form.$('email').bind()}
+          size="50"
         />      
       </div>
       <span className="help-block"> {form.$('email').error} </span>
@@ -37,11 +38,12 @@ export default observer(({form}) => {
     <div className="form-group">
       <div className={checkErrClass('password')}>
         <span className="input-group-addon">
-          <i className="icon-lock"></i>
+          <i className="fa fa-lock"></i>
         </span>
         <input 
           className={checkInputErrClass('password')} 
           {...form.$('password').bind({type: 'password'})}
+          size="50"
         />      
       </div>
       <span className="help-block"> {form.$('password').error} </span>
@@ -53,11 +55,12 @@ export default observer(({form}) => {
     <div className="form-group">
       <div className={checkErrClass('fullname')}>
         <span className="input-group-addon">
-          <i className="icon-user"></i>
+          <i className="fa fa-user"></i>
         </span>
         <input 
           className={checkInputErrClass('fullname')} 
           {...form.$('fullname').bind()}
+          size="50"
         />      
       </div>
       <span className="help-block"> {form.$('fullname').error} </span>
@@ -66,11 +69,12 @@ export default observer(({form}) => {
     <div className="form-group">
       <div className={checkErrClass('address')}>
         <span className="input-group-addon">
-          <i className="icon-home"></i>
+          <i className="fa fa-home"></i>
         </span>
         <input 
           className={checkInputErrClass('address')} 
           {...form.$('address').bind()}
+          size="50"
         />      
       </div>
       <span className="help-block"> {form.$('address').error} </span>
@@ -79,11 +83,12 @@ export default observer(({form}) => {
      <div className="form-group">
       <div className={checkErrClass('city')}>
         <span className="input-group-addon">
-          <i className="icon-location-pin"></i>
+          <i className="fa fa-map-marker"></i>
         </span>
         <input 
           className={checkInputErrClass('city')} 
           {...form.$('city').bind()}
+          size="50"
         />      
       </div>
       <span className="help-block"> {form.$('city').error} </span>
@@ -91,8 +96,12 @@ export default observer(({form}) => {
 
     <div className="form-group">
       <div className={checkErrClass('country')}>
-        <span className="input-group-addon"><i className="icon-flag"></i></span>
-        <select name="country" className="form-control" {...form.$('country').bind()}>
+        <span className="input-group-addon"><i className="fa fa-globe"></i></span>
+        <select 
+          name="country" 
+          className="form-control" 
+          {...form.$('country').bind()}
+        >
           <option value>Country</option>
           <option value="FR">France</option>               
           <option value="TN">Tunisia</option>               
