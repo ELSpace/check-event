@@ -18,12 +18,11 @@ export default class Forms extends React.Component {
       <div className="container-fluid">
         <Card>
           <CardBlock>
-            <CardTitle>My Forms</CardTitle>
-            <CardSubtitle>form management</CardSubtitle>
+            <CardTitle>My Forms</CardTitle>           
             <hr/>
             <div className="actions">
               <Link to='/forms/new'> 
-                <button className='btn btn-primary'>Create a New Form</button> 
+                <button className='btn btn-primary'>Create Form</button> 
               </Link>
             </div>
             <br />
