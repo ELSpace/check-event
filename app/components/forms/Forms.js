@@ -12,17 +12,14 @@ export default class Forms extends React.Component {
 
   render() {
     return (
-        <div className="container-fluid">   
-         <div className="caption">
-              <i className="fa fa-cog" />
-              <span className="caption-subject font-red sbold uppercase"> My Forms</span>
-            </div> <br/>
-                   <div className="actions">
-                <Link to='/forms/new'> 
-                  <button className='btn btn-primary'>Create a New Form</button> 
-                </Link>
-              </div>
-            <hr/>    
+        <div className="container-fluid">
+          <div className="actions">
+            <Link to='/forms/new'> 
+              <button className='btn btn-primary'>Create a New Form</button> 
+            </Link>
+          </div>
+          <hr/>
+          
         <div className="card">
           <div className="card-header">
             <i className="fa fa-align-justify" />
