@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import { observer, inject } from 'mobx-react';
 import Header from '../../ui/Header/Header';
 import Sidebar from '../../ui/Sidebar/Sidebar';
+import Breadcrumb from '../../ui/Breadcrumb/Breadcrumb';
 //import Breadcrumb from '../../ui/Breadcrumb/Breadcrumb'
 import {Main} from 'reactstrap';
 
@@ -31,39 +32,14 @@ class Dashboard extends Component {
       <div className="app">
         <Header />
         <div className="app-body">
-          
-          <div className="container">
-
-          <Route exact path='/forms' component={Forms}/>
-          <Route path='/forms/new' component={New}/>
-          <Route path='/settings' component={Settings}/>
-          </div>
           <Sidebar {...this.props}/>
-          </div>
-         {/*    <Header.Actions actions={actions} />
-          <Header.PageWrapper>
-            <Header.SearchForm placeholder="Search..." />
-            <Header.TopMenuWrapper>
-              <Header.DropdownMenu 
-                icon="fa fa-bell" 
-                badge="4"
-                title="You have 4 notification"
-              >
-              </Header.DropdownMenu>
-              <Header.Profile name={this.props.store.user.user && this.props.store.user.user.fullname} pic={pic} items={profileItems}/>       
-            </Header.TopMenuWrapper> 
-          </Header.PageWrapper>    
-        </Header>
-        
-        <div className="page-container">
-          <Sidebar menu={routes}/>
-          <Content>
-            <Route exact path='/' component={Main} />
+          <div className="main">
+            <Breadcrumb />
             <Route exact path='/forms' component={Forms}/>
             <Route path='/forms/new' component={New}/>
-          </Content>
+            <Route path='/settings' component={Settings}/>
+          </div>
         </div>
-      */}
       </div>
     );
   }
