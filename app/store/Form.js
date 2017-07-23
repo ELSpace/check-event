@@ -22,19 +22,10 @@ export default class Form {
     }
   }
 
-  @action.bound getSingle = async name => {
-    const response = await feathersClient.service('forms').find({
-      query: {
-        name
-      }
-    });
-
-    this.singleForm = response.data[0];
-    
-    if (response.data[0])
-      return response.data[0].fields;
-    else 
-      this.getSingle(name);
+  @action.bound getSingle = async id => {
+    const response = await feathersClient.service('forms').get(id);
+    this.singleForm = response;
+    return response.fields;
   }
 
   @action.bound find = async () => {

@@ -12,7 +12,7 @@ const restrict = [
 module.exports = {
   before: {
     all: [],
-    find: [ ],
+    find: [ ...restrict ],
     get: [],
     create: [  ],
     update: [ ...restrict ],
