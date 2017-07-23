@@ -1,10 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+import FormsTableRow from './FormsTableRow';
 
 const FormsTable = ({forms}) => 
-
-    
-
   <div>
     <table className="table table-responsive table-bordered">
     <thead>
@@ -16,29 +14,7 @@ const FormsTable = ({forms}) =>
         </tr>
     </thead>
     <tbody>
-        {forms.map(form => 
-        <tr key={form._id} role="row" className="odd">
-          <td>
-              <Link to={'/display/'+form.name} target='_blank'>
-              {form.name} 
-              </Link>
-              
-          </td>
-          <td>{form.entries.length}</td>
-          <td>{form.createdAt}</td>
-          <td>
-        <div className="dropdown">
-        <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Update/Delete Form
-        </button>
-        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a className="dropdown-item" href="#">Update</a>
-          <a className="dropdown-item" href="#">Delete</a>
-        </div>
-      </div>
-          </td>
-        </tr>
-        )}
+			{forms.map(form => <FormsTableRow key={form._id} form={form}></FormsTableRow> )}
     </tbody>
     </table>
     <ul className="pagination">
