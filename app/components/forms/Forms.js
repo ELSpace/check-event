@@ -4,15 +4,27 @@ import { observer, inject } from 'mobx-react';
 import { Card, CardTitle, CardSubtitle, CardBlock } from 'reactstrap';
 
 import FormsTable from './FormsTable';
+let drop;
 
 @inject('store')
 @observer
 export default class Forms extends React.Component {
 
+componentDidMount() {  
+    drop=$('#dropdownMenuButton').dropdown({     
+
+    });
+}
+
+  
+
   componentWillMount() {
     this.props.store.form.find();
   }
 
+  
+  
+  
   render() {
     return (
       <div className="container-fluid">
