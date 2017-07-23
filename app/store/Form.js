@@ -34,4 +34,13 @@ export default class Form {
     this.forms = myForms.data;
   };
 
+  @action.bound remove = async id => {
+    const response = await feathersClient.service('forms')
+      .remove(id);
+    
+    // remove form from store for sync
+    this.forms = this.forms.filter(form => form._id !== id);
+    return;
+  }
+
 } 
