@@ -1,28 +1,32 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 
-@inject('store')
+@inject(allStores => ({
+  form: allStores.store.form
+}))
 @observer
 class Display extends Component {
 
   componentDidMount() {
     window.$('body').css('background', '#ffffff');
-    const param = this.props.match.params.form;
-    this.props.store.form.getSingle(param)
-      .then(fields => {
-        console.log(fields);
-        window.$('#render').formRender({
-          dataType: 'json',
-          formData: fields
-        });
+    
+    const { match, form } = this.props;
+
+    const param = match.params.form;
+    
+    form.getSingle(param).then(fields => {
+      window.$('#render').formRender({
+        dataType: 'json',
+        formData: fields
       });
+    });
   }
 
   render() {
     return <div className="container">
       <div className="row">
-        <div className="col-md-6 col-md-offset-3">
-          <h2><b>{this.props.match.params.form.replace('-', ' ')}</b></h2>
+        <div className="col-md-6 offset-md-3">
+          <h2><b>{this.props.form.singleForm && this.props.form.singleForm.name}</b></h2>
           <hr />
           <div id="render"></div>
           <hr />
@@ -39,3 +43,4 @@ class Display extends Component {
 }
 
 export default Display;
+
