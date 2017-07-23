@@ -52,6 +52,7 @@
     "feathers-mongoose": "^5.1.1",
     "feathers-rest": "^1.7.3",
     "feathers-socketio": "^2.0.0",
+    "feathers-swagger": "^0.5.0",
     "formBuilder": "^2.5.3",
     "helmet": "^3.6.1",
     "joi": "^10.6.0",
