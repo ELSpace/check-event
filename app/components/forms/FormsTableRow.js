@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { observer, inject } from 'mobx-react';
 
+@inject(allStores => ({
+  formStore: allStores.store.form
+}))
+@observer
 class FormsTableRow extends Component {
   constructor(props) {
     super(props);
@@ -16,6 +21,10 @@ class FormsTableRow extends Component {
     this.setState({
       dropdownOpen: !this.state.dropdownOpen
     });
+  }
+
+  remove() {
+    this.props.formStore.remove(this.props.form._id);
   }
 
   render() {
@@ -33,14 +42,11 @@ class FormsTableRow extends Component {
         <td>
           <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
             <DropdownToggle caret>
-              Dropdown
+              Actions
             </DropdownToggle>
             <DropdownMenu>
-              <DropdownItem header>Header</DropdownItem>
-              <DropdownItem disabled>Action</DropdownItem>
-              <DropdownItem>Another Action</DropdownItem>
-              <DropdownItem divider />
-              <DropdownItem>Another Action</DropdownItem>
+              <DropdownItem>Edit</DropdownItem>
+              <DropdownItem onClick={this.remove.bind(this)}>Remove</DropdownItem>
             </DropdownMenu>
           </Dropdown>
         </td>
