@@ -42,6 +42,7 @@ class Login extends Component {
         const values = form.values();
         user.login(values)
           .then(() => {
+           toastr.success(`Welcome ${user.user.fullname} ! `);
             self.props.history.push('/');
           })
           .catch(e => {
