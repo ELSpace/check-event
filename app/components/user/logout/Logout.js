@@ -4,6 +4,7 @@ import { observer, inject } from 'mobx-react'
 import Loadable from 'react-loading-overlay';
 import toastr from 'toastr';
 
+
 @withRouter
 @inject('store')
 @observer
@@ -11,6 +12,8 @@ class Logout extends React.Component {
   componentDidMount() {
     this.props.store.user.logout()
       .then(() => {
+      toastr.success(` See you soon ;) `);
+
         this.props.history.push('/login');
       })
       .catch(() => {

@@ -45,7 +45,9 @@ class FormsTableRow extends Component {
               Actions
             </DropdownToggle>
             <DropdownMenu>
-              <DropdownItem>Edit</DropdownItem>
+              <DropdownItem>
+                <Link to="/forms/edit">
+                Edit </Link></DropdownItem>
               <DropdownItem onClick={this.remove.bind(this)}>Remove</DropdownItem>
             </DropdownMenu>
           </Dropdown>

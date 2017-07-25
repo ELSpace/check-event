@@ -12,6 +12,7 @@ import {Main} from 'reactstrap';
 import Forms from '../forms/Forms';
 import Settings from '../settings/Settings';
 import New from '../forms/new/New';
+import Edit from '../forms/edit/Edit';
 
 // assets
 //import logo from '../../assets/img/logo.png';
@@ -38,6 +39,7 @@ class Dashboard extends Component {
             <Route path='/home' component={() => <h1>Home</h1>}/>
             <Route exact path='/forms' component={Forms}/>
             <Route path='/forms/new' component={New}/>
+            <Route path='/forms/edit' component={Edit}/>
             <Route path='/settings' component={Settings}/>
           </div>
         </div>
