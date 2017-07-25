@@ -39,7 +39,7 @@ class Dashboard extends Component {
             <Route path='/home' component={() => <h1>Home</h1>}/>
             <Route exact path='/forms' component={Forms}/>
             <Route path='/forms/new' component={New}/>
-            <Route path='/forms/edit' component={Edit}/>
+            <Route path='/forms/:id/edit' component={Edit}/>
             <Route path='/settings' component={Settings}/>
           </div>
         </div>

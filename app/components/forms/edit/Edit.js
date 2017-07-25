@@ -4,18 +4,28 @@ import { observer, inject } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
 import { Card, CardTitle, CardSubtitle, CardBlock } from 'reactstrap';
 
-let form;
+let renderedForm;
 
-@inject('store')
+@inject(allStores => ({form: allStores.store.form}))
 @observer
 class New extends Component {
-  componentDidMount() {  
-    form = $('#builder').formBuilder({
+  componentDidMount() {
+    
+    const { match, form } = this.props;
+    const id = match.params.id;
+
+    renderedForm = $('#builder').formBuilder({
       showActionButtons: false
     });
+
+    form.getSingle(id)
+      .then(fields => {
+        console.log(fields);
+        renderedForm.actions.setData(JSON.stringify(fields))
+      });
   }
 
-  createForm() {
+  updateForm() {
     const name = this.refs.formName.value;
 
     if (name === "") alert('enter form name please');
@@ -26,7 +36,7 @@ class New extends Component {
   }
 
   render() {
-    this.createForm = this.createForm.bind(this);
+    this.updateForm = this.updateForm.bind(this);
 
     return (
       <div className="container-fluid">
@@ -35,19 +45,20 @@ class New extends Component {
             <CardTitle>Edit Form</CardTitle>           
             <hr/>
             <div className="row">
-              <div className="col-md-1">
+              <div className="col-md-2">
                 <label>Form Name</label>
               </div>
-              <div className="col-md-10">
+              <div className="col-md-8">
                 <input 
-                  type="text" 
+                  type="text"
+                  value={this.props.form.singleForm && this.props.form.singleForm.name}
                   className="form-control" 
                   placeholder="name" 
                   ref="formName"
                 />
               </div>
               <div className="col-md-1">
-                <button onClick={this.createForm} className="btn btn-success">Save Changes</button>
+                <button onClick={this.updateForm} className="btn btn-success">Save Changes</button>
               </div>
             </div>
             <br />
