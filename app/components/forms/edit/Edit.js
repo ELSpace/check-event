@@ -26,13 +26,24 @@ class New extends Component {
   }
 
   updateForm() {
-    const name = this.refs.formName.value;
+    const name = this.props.form.singleForm.name;
+    const id = this.props.form.singleForm._id;
+    const data = renderedForm.actions.getData()
+    
+    if (data.length == 0) {
+      alert('please create the form fields');
+      return;
+    }
+    
 
     if (name === "") alert('enter form name please');
-    else this.props.store.form.create(name, form.actions.getData())
-      .then(() => {
-        this.props.history.push('/forms');
-      });    
+    else this.props.form.update(
+      id,
+      name, 
+      renderedForm.actions.getData()
+    ).then(() => {
+      this.props.history.push('/forms');
+    });
   }
 
   render() {
@@ -53,8 +64,7 @@ class New extends Component {
                   type="text"
                   value={this.props.form.singleForm && this.props.form.singleForm.name}
                   className="form-control" 
-                  placeholder="name" 
-                  ref="formName"
+                  placeholder="name"
                 />
               </div>
               <div className="col-md-1">

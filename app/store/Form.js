@@ -47,8 +47,12 @@ export default class Form {
     return;
   }
 
-  @action.bound update = async (id, data) => {
-
+  @action.bound update = async (id, name, data) => {
+    const response  = await feathersClient.service('forms')
+      .patch(id, {name, fields: data});
+    console.log(response);
+    
+    toastr.success('form update')
   }
 
 } 
