@@ -1,5 +1,6 @@
 import { observable, action } from 'mobx';
 import feathersClient from '../services/feathers';
+import toastr from 'toastr';
 
 export default class Form {
 
@@ -15,8 +16,10 @@ export default class Form {
         userId: user._id
       });
       this.forms.push(form);
+      toastr.success(`Your form ${name} was created`)
       return;
     } catch(e) {
+      toastr.error('There was an error while creating the form!');
       console.log(e);
       console.log(e.response);
     }
@@ -40,7 +43,12 @@ export default class Form {
     
     // remove form from store for sync
     this.forms = this.forms.filter(form => form._id !== id);
+    toastr.info('Form deleted!');
     return;
+  }
+
+  @action.bound update = async (id, data) => {
+
   }
 
 } 
