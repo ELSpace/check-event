@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 
+import './style.css';
+
 @inject(allStores => ({
   form: allStores.store.form
 }))
@@ -23,13 +25,13 @@ class Display extends Component {
   }
 
   render() {
-    return <div className="container">
-      <div className="row">
-        <div className="col-md-6 offset-md-3">
-          <h2><b>{this.props.form.singleForm && this.props.form.singleForm.name}</b></h2>
+    return <div className="container display">
+      <div className="row pt-5">
+        <div className="col-md-6 offset-md-3 form">
+          <h2 className="text-center"><b>{this.props.form.singleForm && this.props.form.singleForm.name}</b></h2>
           <hr />
           <div id="render"></div>
-          <hr />
+          <br />
           <button className="pull-right btn btn-success">Submit</button>
           <br />
           <br />

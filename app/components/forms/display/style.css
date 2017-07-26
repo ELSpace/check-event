@@ -1,0 +1,10 @@
+body {
+  background: #aee6aa !important;
+}
+
+.display .form {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 30px;
+  border-radius: 10px;
+}
