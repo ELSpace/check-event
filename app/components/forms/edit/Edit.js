@@ -54,7 +54,6 @@ class New extends Component {
   }
 
   change(event) {
-    console.log(event.target.value);
     this.props.form.singleForm.name = event.target.value;
   }
 
