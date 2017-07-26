@@ -11,7 +11,15 @@ let form;
 class New extends Component {
   componentDidMount() {  
     form = $('#builder').formBuilder({
-      showActionButtons: false
+      showActionButtons: false,
+      disableFields: [
+        'autocomplete',
+        'file',
+        'button',
+        'date',
+        'paragraph'
+      ],
+      
     });
   }
 
