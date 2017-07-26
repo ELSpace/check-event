@@ -15,7 +15,14 @@ class New extends Component {
     const id = match.params.id;
 
     renderedForm = $('#builder').formBuilder({
-      showActionButtons: false
+      showActionButtons: false,
+      disableFields: [
+        'autocomplete',
+        'file',
+        'button',
+        'date',
+        'paragraph'
+      ],
     });
 
     form.getSingle(id)
