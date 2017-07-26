@@ -53,8 +53,14 @@ class New extends Component {
     });
   }
 
+  change(event) {
+    console.log(event.target.value);
+    this.props.form.singleForm.name = event.target.value;
+  }
+
   render() {
     this.updateForm = this.updateForm.bind(this);
+    this.change = this.change.bind(this);
 
     return (
       <div className="container-fluid">
@@ -70,6 +76,7 @@ class New extends Component {
                 <input 
                   type="text"
                   value={this.props.form.singleForm && this.props.form.singleForm.name}
+                  onChange={this.change}
                   className="form-control" 
                   placeholder="name"
                 />
