@@ -16,19 +16,7 @@ export default class Forms extends React.Component {
   render() {
     return (
       <div className="container-fluid">
-        <Card>
-          <CardBlock>
-            <CardTitle>My Forms</CardTitle>           
-            <hr/>
-            <div className="actions">
-              <Link to='/forms/new'> 
-                <button className='btn btn-primary'>Create Form</button> 
-              </Link>
-            </div>
-            <br />
-            <FormsTable forms={this.props.store.form.forms}></FormsTable>
-          </CardBlock>
-        </Card>
+        <FormsTable forms={this.props.store.form.forms}></FormsTable>
       </div>
     );
   }
