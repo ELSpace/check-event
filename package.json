@@ -66,6 +66,7 @@
     "react": "^15.6.1",
     "react-addons-css-transition-group": "^15.6.0",
     "react-addons-transition-group": "^15.6.0",
+    "react-avatar": "^2.3.0",
     "react-chartjs-2": "^2.5.1",
     "react-dom": "^15.6.1",
     "react-loading-overlay": "^0.2.5",
