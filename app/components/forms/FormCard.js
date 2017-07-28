@@ -38,9 +38,11 @@ class FormCard extends Component {
           <CardTitle alt={form.name}>
             {name}
           </CardTitle>
-          <br />   
-          <Link to={`/forms/${form._id}/edit`} className="card-link">Update</Link>
-          <Link to={'/'} className="card-link">View</Link>
+          <br />
+          <div className="align-items-end">
+            <Link to={`/forms/${form._id}/edit`} className="card-link">Update</Link>
+            <a href={`/display/${form._id}`} target="_blank" className="card-link">View</a>
+          </div>
         </CardBlock>
         <div className="card-footer text-muted">
           <small>Updated at 25/21/2017</small>
