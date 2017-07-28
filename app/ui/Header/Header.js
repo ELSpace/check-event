@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Dropdown, DropdownMenu, DropdownItem } from 'reactstrap';
 import { observer, inject } from 'mobx-react';
-
-import profileSrc from '../../assets/img/avatars/1.jpg';
+import Avatar from 'react-avatar';
 
 @inject('store')
 @observer
@@ -75,7 +74,9 @@ class Header extends Component {
           <li className="nav-item">
             <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
               <button onClick={this.toggle} className="nav-link dropdown-toggle" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded={this.state.dropdownOpen}>
-                <img src={profileSrc} className="img-avatar" alt="admin@bootstrapmaster.com"/>
+                <Avatar name={ this.props.store.user.user &&
+                      this.props.store.user.user.fullname} className="img-avatar" round={true} size={40}/>
+
                 <span className="d-md-down-none">
                   {
                       this.props.store.user.user &&
