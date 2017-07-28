@@ -58,8 +58,12 @@ class New extends Component {
                 <button onClick={this.createForm} className="btn btn-success">Create</button>
               </div>
             </div>
-            <br />
-            <div id="builder"></div>
+            <br />            
+            <div className="row pt-5 pb-5">
+              <div className="col-md-6 offset-md-3">
+                <div id="builder"></div>
+              </div>
+            </div>
           </CardBlock>
         </Card>
       </div>

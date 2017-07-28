@@ -85,7 +85,11 @@ class New extends Component {
               </div>
             </div>
             <br />
-            <div id="builder"></div>
+            <div className="row pt-5 pb-5">
+              <div className="col-md-6 offset-md-3">
+                <div id="builder"></div>
+              </div>
+            </div>
           </CardBlock>
         </Card>
       </div>
