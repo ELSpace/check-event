@@ -7,11 +7,6 @@ import './style.css';
 
 const FormsTable = ({forms}) => 
 	<div className="row">
-		{
-			forms.map(form => 
-				<div className="col-md-2"><FormCard key={form._id} form={form}></FormCard></div>
-			)
-		}
 		<div className="col-md-2">
 			<Link to='/forms/new' style={{textDecoration: 'none'}}> 
 				<Card className="plus-card">
@@ -21,6 +16,11 @@ const FormsTable = ({forms}) =>
 				</Card>
 			</Link>
 		</div>
+		{
+			forms.map(form => 
+				<div className="col-md-2"><FormCard key={form._id} form={form}></FormCard></div>
+			)
+		}
 	</div>;
 
 export default FormsTable;
