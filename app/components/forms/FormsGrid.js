@@ -21,6 +21,6 @@ const FormsTable = ({forms}) =>
 				</Card>
 			</Link>
 		</div>
-	</div>
+	</div>;
 
 export default FormsTable;

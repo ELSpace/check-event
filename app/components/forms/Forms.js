@@ -2,21 +2,24 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import { observer, inject } from 'mobx-react';
 import { Card, CardTitle, CardSubtitle, CardBlock } from 'reactstrap';
+import Loadable from 'react-loading-overlay';
 
-import FormsTable from './FormsTable';
+import FormsGrid from './FormsGrid'; 
 
-@inject('store')
+@inject(({store}) => ({
+  form: store.form
+}))
 @observer
 export default class Forms extends React.Component {
 
   componentWillMount() {
-    this.props.store.form.find();
+    this.props.form.find();
   }
   
   render() {
     return (
       <div className="container-fluid">
-        <FormsTable forms={this.props.store.form.forms}></FormsTable>
+        <FormsGrid forms={this.props.form.forms}></FormsGrid>
       </div>
     );
   }
