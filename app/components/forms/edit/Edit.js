@@ -86,7 +86,7 @@ class New extends Component {
             </div>
             <br />
             <div className="row pt-5 pb-5">
-              <div className="col-md-6 offset-md-3">
+              <div className="col-md-8 offset-md-2">
                 <div id="builder"></div>
               </div>
             </div>
