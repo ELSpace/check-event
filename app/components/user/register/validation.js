@@ -28,6 +28,18 @@ export default [{
   label:'Country',
   placeholder:'Country',
   rules:'required', 
+},{
+  'type': 'radio',
+  'name': 'type',
+  'label': 'Type',
+  'rules': 'required',
+  'value': 'company'
+},{
+  'type': 'checkbox',
+  'name': 'terms',
+  'label': 'Terms',
+  'rules': 'boolean|accepted',
+  'initial': false
 }];
 
 
