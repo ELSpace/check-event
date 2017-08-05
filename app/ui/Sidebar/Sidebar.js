@@ -26,7 +26,7 @@ class Sidebar extends Component {
                 className="nav-link" 
                 activeClassName="active"
               >
-                <i className="fa fa-home"></i> Home
+                <i className="fa fa-compass"></i> Home
               </NavLink>
             </li>            
             <li className={this.activeRoute("/forms")}>
