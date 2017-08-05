@@ -24,7 +24,7 @@ class Register extends React.Component {
       onSuccess(form) {
         const values = form.values();
         console.log(values);
-        user.register(values)
+        /*user.register(values)
           .then(() => {
             toastr.success(`Account created! welcome ${values.fullname}`);
             self.props.history.push('/');
@@ -32,7 +32,7 @@ class Register extends React.Component {
           .catch(e => {
             console.log(e);
             toastr.error(e.message);
-          }); 
+          }); */
       },
       onError(form) {
         // get all form errors

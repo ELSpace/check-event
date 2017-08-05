@@ -3,8 +3,6 @@ import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import { observer } from 'mobx-react';
 
-  
-
 export default observer(({form}) => {
   
   const checkErrClass = name => {
@@ -13,13 +11,29 @@ export default observer(({form}) => {
     }, 'input-group', 'mb-3');
   }
 
-  const checkInputErrClass = name => {
+  const checkInputErrClass = (name, className) => {
     return classNames({
       'form-control-danger': form.$(name).error
-    }, 'form-control ');
+    }, className || 'form-control ');
   }
 
+  
+
   return <form onSubmit={form.onSubmit} noValidate="novalidate">
+
+    <div className="form-group">
+      <div className={checkErrClass('fullname')}>
+        <span className="input-group-addon">
+          <i className="fa fa-user"></i>
+        </span>
+        <input 
+          className={checkInputErrClass('fullname')} 
+          {...form.$('fullname').bind()}
+          size="50"
+        />      
+      </div>
+      <span className="help-block"> {form.$('fullname').error} </span>
+    </div>
 
     <div className="form-group">
       <div className={checkErrClass('email')}>
@@ -48,22 +62,35 @@ export default observer(({form}) => {
       </div>
       <span className="help-block"> {form.$('password').error} </span>
     </div>
-
-
+    
     <hr />
 
     <div className="form-group">
-      <div className={checkErrClass('fullname')}>
-        <span className="input-group-addon">
-          <i className="fa fa-user"></i>
-        </span>
+    <div className={checkErrClass('type')}>
+      <label className="custom-control custom-radio">
         <input 
-          className={checkInputErrClass('fullname')} 
-          {...form.$('fullname').bind()}
-          size="50"
-        />      
+          className={checkInputErrClass('type', 'custom-control-input')}
+          {...form.select('type').bind({
+            value: 'company',
+            checked: form.select('type').value == 'company'
+          })}
+        />        
+        <span className="custom-control-indicator"></span>
+        <span className="custom-control-description">Company</span>
+      </label>
+      <label className="custom-control custom-radio">
+        <input 
+          className={checkInputErrClass('type', 'custom-control-input')}
+          {...form.select('type').bind({ 
+            value: 'organisation',
+            checked: form.select('type').value == 'organisation'
+          })}
+        />        
+        <span className="custom-control-indicator"></span>
+        <span className="custom-control-description">Organisation</span>
+      </label>
       </div>
-      <span className="help-block"> {form.$('fullname').error} </span>
+      <span className="help-block"> {form.$('terms').error} </span>
     </div>
 
     <div className="form-group">
@@ -112,12 +139,27 @@ export default observer(({form}) => {
       <span className="help-block"> {form.$('country').error} </span>     
     </div>
 
-    <button type="submit" className="btn btn-block btn-success">Create Account</button>
-     <br/>
-        <Link to='/login'>
-        <button type="button" className="btn btn-block btn-info">Back To Login</button>
-        </Link>
+    <div className="form-group">
+    <div className={checkErrClass('terms')}>
+      <label className="custom-control custom-checkbox">
+        <input 
+          className={checkInputErrClass('terms', 'custom-control-input')}
+          {...form.$('terms').bind()}
+        />        
+        <span className="custom-control-indicator"></span>
+        <span className="custom-control-description">Accept the terms</span>
+      </label>
+      </div>
+      <span className="help-block"> {form.$('terms').error} </span>
+    </div>
 
+    
+
+    <button type="submit" className="btn btn-block btn-success">Create Account</button>
+    <br/>
+    <Link to='/login'>
+      <button type="button" className="btn btn-block btn-info">Back To Login</button>
+    </Link>
   </form>
 
 });
