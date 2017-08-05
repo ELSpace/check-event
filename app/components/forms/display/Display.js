@@ -1,27 +1,30 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
+import Form from './Form';
+import formGenerator from '../../../common/formGenerator';
 
 import './style.css';
 
-@inject(allStores => ({
-  form: allStores.store.form
+@inject(({store}) => ({
+  form: store.form
 }))
 @observer
 class Display extends Component {
 
-  componentDidMount() {
+  componentWillMount() {
     window.$('body').css('background', '#ffffff');
-    
     const { match, form } = this.props;
-
     const param = match.params.form;
-    
-    form.getSingle(param).then(fields => {
-      window.$('#render').formRender({
-        dataType: 'json',
-        formData: fields
-      });
-    });
+    form.getSingle(param);
+  }
+
+  onSuccess(form) {
+    const values = form.values();
+    console.log(values);
+  }
+
+  onError() {
+    console.log('errar');
   }
 
   render() {
@@ -30,16 +33,24 @@ class Display extends Component {
         <div className="col-md-6 offset-md-3 form">
           <h2 className="text-center"><b>{this.props.form.singleForm && this.props.form.singleForm.name}</b></h2>
           <hr />
-          <div id="render"></div>
-          <br />
-          <button className="pull-right btn btn-success">Submit</button>
+          { 
+            this.props.form.singleForm && 
+            <Form 
+              form={formGenerator.generate(
+                this.props.form.singleForm.fields,
+                this.onSuccess,
+                this.onError
+              )}
+              fields={this.props.form.singleForm.fields}
+            >
+            </Form>
+          }
           <br />
           <br />
           <br />
         </div>
       </div>
-    </div>
-          
+    </div>          
   }
 
 }
