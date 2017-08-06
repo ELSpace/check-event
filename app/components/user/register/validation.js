@@ -45,6 +45,11 @@ export default [{
   'label': 'Terms',
   'rules': 'boolean|accepted',
   'initial': false
+},{  
+  'name': 'entity_name',
+  'label': 'Compnay/Organisation Name',
+  'rules': 'required|string|between:2,50',
+  'placeholder':'Compnay/Organisation Name'
 }];
 
 

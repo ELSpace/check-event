@@ -14,6 +14,7 @@ module.exports = function (app) {
     country: { type: String, required: true },
 
     type: { type: Number, required: true },
+    entity_name: { type: String, required: true },
     phone: { type: Number, required: true },
 
     createdAt: { type: Date, default: Date.now },

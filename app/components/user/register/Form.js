@@ -92,6 +92,20 @@ export default observer(({form}) => {
       <span className="help-block"> {form.$('type').error} </span>
     </div>
 
+     <div className="form-group">
+      <div className={checkErrClass('entity_name')}>
+        <span className="input-group-addon">
+          <i className="fa fa-building"></i>
+        </span>
+        <input 
+          className={checkInputErrClass('entity_name')} 
+          {...form.$('entity_name').bind()}
+          size="50"
+        />      
+      </div>
+      <span className="help-block"> {form.$('entity_name').error} </span>
+    </div>
+
     <div className="form-group">
       <div className={checkErrClass('address')}>
         <span className="input-group-addon">
