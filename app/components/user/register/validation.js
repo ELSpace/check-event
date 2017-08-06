@@ -29,11 +29,16 @@ export default [{
   placeholder:'Country',
   rules:'required', 
 },{
+  name:'phone',
+  label:'Phone',
+  placeholder:'Phone Number',
+  rules:'required|numeric', 
+},{
   'type': 'radio',
   'name': 'type',
   'label': 'Type',
   'rules': 'required',
-  'value': 'company'
+  'value': 0
 },{
   'type': 'checkbox',
   'name': 'terms',

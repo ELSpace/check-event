@@ -13,7 +13,9 @@ module.exports = function (app) {
     city: { type: String, required: true },
     country: { type: String, required: true },
 
-  
+    type: { type: Number, required: true },
+    phone: { type: Number, required: true },
+
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now }
   });

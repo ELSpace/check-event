@@ -20,7 +20,10 @@ const schema = {
   city: Joi.string().required(),
   country: Joi.string().required(),
   email: Joi.string().email().required(),
-  password: Joi.string().min(8).max(32).required(),
+  password: Joi.string().min(8).max(32).required(),  
+  type: Joi.number().integer().min(0).max(1).required(),
+  phone: Joi.number().integer().required(),
+  terms: Joi.boolean().invalid(false).required()
 };
 
 const joiOptions = { convert: true, abortEarly: false };

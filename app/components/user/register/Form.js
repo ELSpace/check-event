@@ -17,8 +17,6 @@ export default observer(({form}) => {
     }, className || 'form-control ');
   }
 
-  
-
   return <form onSubmit={form.onSubmit} noValidate="novalidate">
 
     <div className="form-group">
@@ -66,31 +64,32 @@ export default observer(({form}) => {
     <hr />
 
     <div className="form-group">
+    <label className="text-muted">Type</label>
     <div className={checkErrClass('type')}>
       <label className="custom-control custom-radio">
         <input 
           className={checkInputErrClass('type', 'custom-control-input')}
           {...form.select('type').bind({
-            value: 'company',
-            checked: form.select('type').value == 'company'
+            value: 0,
+            checked: parseInt(form.select('type').value) == 0
           })}
         />        
         <span className="custom-control-indicator"></span>
         <span className="custom-control-description">Company</span>
-      </label>
+      </label> <br />
       <label className="custom-control custom-radio">
         <input 
           className={checkInputErrClass('type', 'custom-control-input')}
           {...form.select('type').bind({ 
-            value: 'organisation',
-            checked: form.select('type').value == 'organisation'
+            value: 1,
+            checked: parseInt(form.select('type').value) == 1
           })}
         />        
         <span className="custom-control-indicator"></span>
         <span className="custom-control-description">Organisation</span>
       </label>
       </div>
-      <span className="help-block"> {form.$('terms').error} </span>
+      <span className="help-block"> {form.$('type').error} </span>
     </div>
 
     <div className="form-group">
@@ -105,6 +104,20 @@ export default observer(({form}) => {
         />      
       </div>
       <span className="help-block"> {form.$('address').error} </span>
+    </div>
+
+    <div className="form-group">
+      <div className={checkErrClass('phone')}>
+        <span className="input-group-addon">
+          <i className="fa fa-phone"></i>
+        </span>
+        <input 
+          className={checkInputErrClass('phone')} 
+          {...form.$('phone').bind()}
+          size="50"
+        />      
+      </div>
+      <span className="help-block"> {form.$('phone').error} </span>
     </div>
 
      <div className="form-group">
@@ -152,8 +165,6 @@ export default observer(({form}) => {
       </div>
       <span className="help-block"> {form.$('terms').error} </span>
     </div>
-
-    
 
     <button type="submit" className="btn btn-block btn-success">Create Account</button>
     <br/>
