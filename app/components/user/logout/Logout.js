@@ -16,12 +16,7 @@ class Logout extends React.Component {
       })
       .catch(() => {
         toastr.error('There was a problem logging you out');
-      })
-    };
-  }
-
-  componentWillUnmount() {
-    clearInterval(interval);
+      });    
   }
 
   render() {
