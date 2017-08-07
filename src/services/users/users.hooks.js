@@ -22,8 +22,9 @@ const schema = {
   email: Joi.string().email().required(),
   password: Joi.string().min(8).max(32).required(),  
   type: Joi.number().integer().min(0).max(1).required(),
-  phone: Joi.number().integer().required(),
-  terms: Joi.boolean().invalid(false).required()
+  phone: Joi.number().required(),
+  terms: Joi.boolean().invalid(false).required(),
+  entity_name: Joi.string().min(2).max(50).required()
 };
 
 const joiOptions = { convert: true, abortEarly: false };
