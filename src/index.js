@@ -8,8 +8,9 @@ const path = require('path');
 
 const api = new feathers()
   .configure(configuration(path.join(__dirname, '..')))
-  .use(feathers.static(app.get('public')))
   .use('/api/v1', app)
+  .use(feathers.static(app.get('public')))
+  .use('/', (req, res) => res.sendFile(path.resolve(__dirname, '../public/index.html')))
   .listen(port); 
 
 process.on('unhandledRejection', (reason, p) =>
