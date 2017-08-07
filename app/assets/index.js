@@ -12,4 +12,4 @@ import 'jquery-ui-dist/jquery-ui.structure.min.css';
 
 // JS  
 require('formBuilder');
-require('formBuilder/dist/form-render.min'); // contains babel-polyfill
+//require('formBuilder/dist/form-render.min'); // contains babel-polyfill
