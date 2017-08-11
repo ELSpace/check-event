@@ -5,11 +5,20 @@ import formGenerator from '../../../common/formGenerator';
 
 import './style.css';
 
+
 @inject(({store}) => ({
-  form: store.form
+  form: store.form,
+  entry: store.entry
 }))
 @observer
 class Display extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      submitted: false
+    }
+  }
 
   componentWillMount() {
     window.$('body').css('background', '#ffffff');
@@ -21,6 +30,10 @@ class Display extends Component {
   onSuccess(form) {
     const values = form.values();
     console.log(values);
+    this.props.entry.create(
+      this.props.form.singleForm._id,
+      values
+    ).then(() => this.setState({submitted: true}));
   }
 
   onError() {
@@ -28,6 +41,11 @@ class Display extends Component {
   }
 
   render() {
+    const {submitted} = this.state;
+
+    if (submitted)
+      return <h1>Thank you for submitting the form</h1>;
+
     return <div className="container display">
       <div className="row pt-5">
         <div className="col-md-6 offset-md-3 form">
@@ -38,7 +56,7 @@ class Display extends Component {
             <Form 
               form={formGenerator.generate(
                 this.props.form.singleForm.fields,
-                this.onSuccess,
+                this.onSuccess.bind(this),
                 this.onError
               )}
               fields={this.props.form.singleForm.fields}
