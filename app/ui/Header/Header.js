@@ -4,7 +4,7 @@ import { Dropdown, DropdownMenu, DropdownItem } from 'reactstrap';
 import { observer, inject } from 'mobx-react';
 import Avatar from 'react-avatar';
 
-@inject('store')
+@inject(({store}) => ({user: store.user}))
 @observer
 class Header extends Component {
 
@@ -48,7 +48,9 @@ class Header extends Component {
       <header className="app-header navbar">
         <button className="navbar-toggler mobile-sidebar-toggler d-lg-none" type="button" onClick={this.mobileSidebarToggle}>&#9776;</button>
 
-        <a className="navbar-brand" href="#"></a>
+        <a className="navbar-brand text-center" href="#">
+          <b>{this.props.user.user && this.props.user.user.entity_name}</b>
+        </a>
 
         <ul className="nav navbar-nav d-md-down-none">
           <li className="nav-item">
@@ -74,13 +76,13 @@ class Header extends Component {
           <li className="nav-item">
             <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
               <button onClick={this.toggle} className="nav-link dropdown-toggle" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded={this.state.dropdownOpen}>
-                <Avatar name={ this.props.store.user.user &&
-                      this.props.store.user.user.fullname} className="img-avatar" round={true} size={40}/>
+                <Avatar name={ this.props.user.user &&
+                      this.props.user.user.fullname} className="img-avatar" round={true} size={40}/>
 
                 <span className="d-md-down-none">
                   {
-                      this.props.store.user.user &&
-                      this.props.store.user.user.fullname
+                      this.props.user.user &&
+                      this.props.user.user.fullname
                   }
                 </span>
               </button>
