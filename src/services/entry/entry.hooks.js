@@ -8,7 +8,7 @@ const createSchema = fields => {
 
   fields.map(field => {
     let key = Joi;
-    console.log(field);
+    //console.log(field);
 
     // types
     if (field.type === 'number') key = key.number();
@@ -68,6 +68,7 @@ module.exports = {
     create: [ 
       async function(hook) {
         const formID = hook.data.formID;
+
         const form = await hook.app.service('forms').get(formID);
 
         const fields = form.fields;
