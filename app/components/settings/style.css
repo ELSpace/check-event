@@ -1,5 +1,6 @@
 .settings .nav {
   border: 1px solid #eee; 
+  background: #263238;
   border-radius: 10px;
 }
 
@@ -13,8 +14,14 @@
   padding: 15px 0 15px 15px;
 }
 
-.settings .nav a:visited {
-  color: #63caff;
+.settings .nav a:visited,
+.settings .nav a:link {
+  color: #d6d6d6;
+}
+
+.settings .nav a:hover {
+  background: #eee;
+  color: #3e74c7;
 }
 
 
