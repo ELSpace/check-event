@@ -17,16 +17,12 @@ const Settings = () =>
           <div className="col-md-2">
             <nav className="nav">              
               <Link className="nav-link flex-column active" to="/settings/account">
-                <i className="fa fa-user"></i>  Account
-              </Link>
-              <Link className="nav-link" to="/settings/page">
-                <i className="fa fa-file"></i>  Page
+                <b>Account</b> <i className="fa fa-arrow-right"></i>
               </Link>
             </nav>
           </div>
           <div className="col-md-10 content">             
             <Switch>
-              <Route path="/settings/page" component={() => <h1>Page settings</h1>}></Route>
               <Route path="/settings/account" component={AccountSettings}></Route>            
               <Redirect from="/" to="/settings/account" />
             </Switch>
