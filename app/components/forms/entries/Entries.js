@@ -27,13 +27,15 @@ class Display extends Component {
         <table className="table table-bordered">
           <tr>
             {
-              singleForm && singleForm.fields.map(field => <th>{field.label}</th>)
+              singleForm && singleForm.fields.map(field => 
+                field.type !== "header" && <th>{field.label}</th>
+              )
             }
           </tr>
           { entries && entries.map(entry => {
             return <tr>
               {singleForm.fields.map(field => {
-                return <td>{entry.data[field.name]}</td>
+                return field.type !== 'header' && <td>{entry.data[field.name]}</td>
               })}
             </tr>
           })

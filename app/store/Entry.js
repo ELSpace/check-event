@@ -9,7 +9,8 @@ export default class Entry {
   @observable entry;
   
   @action.bound create = async (formID, data) => {
-    
+    delete data['undefined'];
+    console.log(data);
     const response = await service.create({
       formID, 
       data
