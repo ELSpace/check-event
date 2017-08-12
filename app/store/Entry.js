@@ -5,7 +5,7 @@ const service = feathersClient.service('entries');
 
 export default class Entry { 
 
-  @observable entires = [];
+  @observable entries = [];
   @observable entry;
   
   @action.bound create = async (formID, data) => {
@@ -18,8 +18,16 @@ export default class Entry {
     return;
   }
 
-  @action.bound find = async(formId) => {
-
+  @action.bound find = async(formID) => {
+    this.entries = [];
+    const response = await service.find({
+      query: {
+        formID
+      }
+    });
+    
+    this.entries = response.data;    
+    return;
   }
 
   @action.bound get = async (formdId, id) => {
