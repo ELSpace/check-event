@@ -13,10 +13,8 @@ import Forms from '../forms/Forms';
 import Settings from '../settings/Settings';
 import New from '../forms/new/New';
 import Edit from '../forms/edit/Edit';
+import Entries from '../forms/entries/Entries';
 
-// assets
-//import logo from '../../assets/img/logo.png';
-//import pic from '../../assets/img/avatar11.jpg';
 
 import { routes, actions, profileItems } from '../../common';
 
@@ -40,6 +38,7 @@ class Dashboard extends Component {
             <Route exact path='/forms' component={Forms}/>
             <Route path='/forms/new' component={New}/>
             <Route path='/forms/:id/edit' component={Edit}/>
+            <Route path='/entries/:form' component={Entries}/>
             <Route path='/settings' component={Settings}/>
           </div>
         </div>
