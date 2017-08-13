@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
 import MyForm from 'mobx-react-form';
-import logo from '../../../assets/img/avatars/elspacelogo.png'
+import logo from '../../../assets/img/avatars/elspacelogo.png';
+import '../register/style.css';
 
 
 import Header from './Header';
@@ -63,7 +64,7 @@ class Login extends Component {
 
   render() { 
     return (
-      <div>
+      <div className="cont">
         <div className="app flex-row align-items-center">
           <div className="container">
             <div className="row justify-content-center">
