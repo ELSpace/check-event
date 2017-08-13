@@ -42,7 +42,8 @@ class FormCard extends Component {
           <div className="align-items-end">
             <Link to={`/entries/${form._id}`} className="card-link">Entries</Link><br />
             <Link to={`/forms/${form._id}/edit`} className="card-link">Update</Link>< br/>
-            <a href={`/display/${form._id}`} target="_blank" className="card-link">View</a>
+            <a href={`/display/${form._id}`} target="_blank" className="card-link">View</a> <br/>
+            <a href="#"  onClick={this.remove.bind(this)} className="card-link"> Remove </a>
           </div>
         </CardBlock>
         <div className="card-footer text-muted">
