@@ -44,7 +44,14 @@ class Display extends Component {
     const {submitted} = this.state;
 
     if (submitted)
-      return <h1>Thank you for submitting the form</h1>;
+      return  <div className="uniquee">
+        <div className="clr">
+        <div className="col-md-6 offset-md-3">
+      <h1 className="text-center">Thank you for Submitting the form ! </h1>
+      </div>
+      </div>
+      </div>
+      ;
 
     return <div className="uniquee">
     <div className="container display">
