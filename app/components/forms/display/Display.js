@@ -46,7 +46,8 @@ class Display extends Component {
     if (submitted)
       return <h1>Thank you for submitting the form</h1>;
 
-    return <div className="container display">
+    return <div className="uniquee">
+    <div className="container display">
       <div className="row pt-5">
         <div className="col-md-6 offset-md-3 form">
           <h2 className="text-center"><b>{this.props.form.singleForm && this.props.form.singleForm.name}</b></h2>
@@ -68,7 +69,8 @@ class Display extends Component {
           <br />
         </div>
       </div>
-    </div>          
+    </div>   
+    </div>       
   }
 
 }
