@@ -7,6 +7,7 @@ import logo from '../../../assets/img/elspacelogo.png'
 import { observer, inject } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
 import toastr from 'toastr';
+import './style.css';
 
 import Header from './Header';
 
@@ -48,6 +49,7 @@ class Register extends React.Component {
 
   render() { 
     return(
+      <div className="cont">
       <div className="app flex-row align-items-center">
         <div className="container">
           <div className="row justify-content-center">
@@ -61,6 +63,7 @@ class Register extends React.Component {
             </div>
           </div>
         </div>
+      </div>
       </div>
     )
   }
