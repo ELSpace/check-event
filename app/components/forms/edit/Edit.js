@@ -21,6 +21,7 @@ class New extends Component {
         'file',
         'button',
         'date',
+        'hidden',
         'paragraph'
       ],
     });
