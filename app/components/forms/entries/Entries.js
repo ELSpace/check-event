@@ -60,7 +60,8 @@ class Display extends Component {
                   {fields.map(field => {
                     if (field.type === 'header') return null;
                     if (field.type === 'checkbox') 
-                      return <td className="col-md-2">{'' + entry.data[field.name]}</td>
+                      return <td className="col-md-2">{entry.data[field.name] && ('' + entry.data[field.name])}</td>
+
                     return <td className="col-md-2">{entry.data[field.name]}</td>
                   })}
                 </tr>
