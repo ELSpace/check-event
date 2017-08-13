@@ -1,0 +1,6 @@
+.entries {
+  padding: 30px;
+  background: #fff;
+  overflow-x: auto;
+  white-space: nowrap;
+}

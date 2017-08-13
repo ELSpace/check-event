@@ -40,7 +40,8 @@ class FormCard extends Component {
           </CardTitle>
           <br />
           <div className="align-items-end">
-            <Link to={`/forms/${form._id}/edit`} className="card-link">Update</Link>
+            <Link to={`/entries/${form._id}`} className="card-link">Entries</Link><br />
+            <Link to={`/forms/${form._id}/edit`} className="card-link">Update</Link>< br/>
             <a href={`/display/${form._id}`} target="_blank" className="card-link">View</a>
           </div>
         </CardBlock>
