@@ -21,6 +21,7 @@ import './style.css';
 import Login from './components/user/login/Login';
 import Register from './components/user/register/Register';
 import Dashboard from './components/dashboard/Dashboard';
+import Mainp from './components/main/Mainp';
 // import Forget from './components/user/forgetpassword/Forget';
 import Logout from './components/user/logout/logout';
 import Display from './components/forms/display/Display';
@@ -38,11 +39,10 @@ class App extends Component {
             <Route path='/login' component={Login} />
             <Route path='/logout' component={Logout} />
             <Route path='/register' component={Register}/>   
-            <Route path="/display/:form" component={Display}/>         
+            <Route path="/display/:form" component={Display}/>     
+                
  
-            {/* />
-            <Route path='/forget' component={Forget} />            
-            */}
+           
             <PrivateRoute 
               path='/' 
               component={Dashboard} 

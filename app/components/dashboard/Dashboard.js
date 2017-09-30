@@ -8,7 +8,7 @@ import Breadcrumb from '../../ui/Breadcrumb/Breadcrumb';
 import {Main} from 'reactstrap';
 
 // components
-//import Main from '../main/Main';
+import Mainp from '../main/Mainp';
 import Forms from '../forms/Forms';
 import Settings from '../settings/Settings';
 import New from '../forms/new/New';
@@ -34,12 +34,13 @@ class Dashboard extends Component {
           <Sidebar {...this.props}/>
           <div className="main">
             <Breadcrumb />
-            <Route path='/home' component={() => <h1>Home</h1>}/>
+            <Route path='/home' component={Mainp}/>
             <Route exact path='/forms' component={Forms}/>
             <Route path='/forms/new' component={New}/>
             <Route path='/forms/:id/edit' component={Edit}/>
             <Route path='/entries/:form' component={Entries}/>
             <Route path='/settings' component={Settings}/>
+
           </div>
         </div>
       </div>

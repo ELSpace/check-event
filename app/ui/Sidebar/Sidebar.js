@@ -20,9 +20,9 @@ class Sidebar extends Component {
             <li className="nav-title">
               Dashboard
             </li>
-            <li className={this.activeRoute("/")}>
+            <li className={this.activeRoute("/home")}>
               <NavLink 
-                to={'/'} 
+                to={'/home'} 
                 className="nav-link" 
                 activeClassName="active"
               >
